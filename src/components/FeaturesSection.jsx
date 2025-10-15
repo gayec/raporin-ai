@@ -31,8 +31,7 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between gap-10 px-6 lg:px-20 py-16">
-
+    <section id="features" className="py-20 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.h2
           className="text-4xl font-bold text-center mb-12"

@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 🌐 Meta bilgilerini düzenle
+
 export const metadata = {
   title: "Raporin AI — Yapay Zeka Destekli Rapor Analizi",
   description:

@@ -27,3 +27,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
+:target {
+  scroll-margin-top: 100px; 
+}
