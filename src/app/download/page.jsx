@@ -26,8 +26,7 @@ export default function DownloadPage() {
 
         {/* Açıklama */}
         <p className="text-gray-600 mb-10 leading-relaxed">
-          Raporin AI masaüstü sürümünü indirerek internet bağlantısı olmadan bile
-          SGK raporlarını güvenle analiz edebilirsin.  
+          Raporin AI masaüstü sürümünü indirerek SGK raporlarını güvenle analiz edebilirsin.  
           Tüm analizler cihazında, güvenli bir şekilde yapılır.
         </p>
 

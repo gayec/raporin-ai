@@ -11,9 +11,7 @@ export default function PricingSection() {
         "Aylık 10 rapor analizi",
         "Temel hata tespiti",
         "Rapor geçmişi takibi",
-      ],
-      button: "Ücretsiz Başla",
-      highlighted: false,
+      ]
     },
     {
       name: "Pro Plan",
@@ -24,9 +22,7 @@ export default function PricingSection() {
         "Yapay zeka destekli hatalı madde tespiti",
         "PDF ve görsel yükleme desteği",
         "Eczane ekip yönetimi",
-      ],
-      button: "Pro’ya Geç",
-      highlighted: true,
+      ]
     },
     {
       name: "Kurumsal Plan",
@@ -37,9 +33,7 @@ export default function PricingSection() {
         "Özel destek ve eğitim",
         "Detaylı raporlama paneli",
         "Kişiselleştirilmiş analiz kuralları",
-      ],
-      button: "İletişime Geç",
-      highlighted: false,
+      ]
     },
   ];
 
@@ -87,15 +81,6 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <button
-                className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
-                  plan.highlighted
-                    ? "bg-gradient-to-r from-[#17C6A3] to-[#0F918B] text-white hover:shadow-lg hover:scale-[1.02]"
-                    : "border border-[#17C6A3] text-[#0F918B] hover:bg-[#17C6A3] hover:text-white"
-                }`}
-              >
-                {plan.button}
-              </button>
             </motion.div>
           ))}
         </div>

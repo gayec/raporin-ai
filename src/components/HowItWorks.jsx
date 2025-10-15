@@ -8,25 +8,26 @@ export default function HowItWorks() {
     {
       icon: <FaFileUpload size={30} className="text-teal-600" />,
       title: "Raporu Yükle",
-      desc: "PDF veya görsel formatındaki SGK raporunu sisteme yükle.",
+      desc: "Meduladan PDF formatında alınan SGK raporunu Raporin AI’ye yükle ve analiz sürecini başlat.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
     },
     {
       icon: <FaRobot size={30} className="text-teal-600" />,
       title: "Yapay Zeka Analizi",
-      desc: "Raporin AI, SUT kurallarını analiz eder ve olası hataları tespit eder.",
+      desc: "Raporin AI, SUT kurallarını analiz eder ve olası SGK kesintilerini erken tespit eder.",
       gradient: "from-emerald-100 via-cyan-50 to-teal-100",
     },
     {
       icon: <FaCheckCircle size={30} className="text-teal-600" />,
       title: "Sonucu Gör",
-      desc: "Raporun geçerlilik durumunu, uyarıları ve açıklamaları saniyeler içinde öğren.",
+      desc: "Raporun SUT uyumluluğunu analiz eder ve size düzeltme geri bildirimleri verir.",
       gradient: "from-cyan-100 via-emerald-50 to-teal-100",
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-28 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB] text-center">
+    <section className="flex flex-col lg:flex-row items-center justify-between gap-10 px-6 lg:px-20 py-16">
+
       <motion.h2
         className="text-4xl font-bold mb-16 text-gray-900"
         initial={{ opacity: 0, y: 20 }}
