@@ -26,7 +26,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-28 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB] text-center">
+    <section id="how-it-works" className="py-28 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB] text-center">
       <motion.h2
         className="text-4xl font-bold mb-16 text-gray-900"
         initial={{ opacity: 0, y: 20 }}

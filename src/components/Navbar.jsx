@@ -23,8 +23,9 @@ export default function Navbar() {
             Ana Sayfa
           </Link>
           <Link href="#how-it-works" className="hover:text-[#0F918B] transition-colors">
-            Nasıl Çalışır
-          </Link>
+  Nasıl Çalışır
+</Link>
+
           <Link href="#features" className="hover:text-[#0F918B] transition-colors">
             Özellikler
           </Link>
