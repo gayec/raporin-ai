@@ -13,7 +13,7 @@ export default function VerifyEmailPage() {
       return;
     }
 
-    fetch(`http://localhost:8081/api/email/verify-email?token=${token}`)
+    fetch(`https://api.raporin.com/api/email/verify-email?token=${token}`)
       .then(async (res) => {
         if (res.ok) {
           setStatus("success");
