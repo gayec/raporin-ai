@@ -5,7 +5,7 @@ export default function DownloadSection() {
         <p className="text-gray-600 mb-8">Platformunu seç ve hemen indir.</p>
         <div className="flex justify-center gap-6 flex-wrap">
           <a
-            href="https://download.raporin.com/RaporinAI_Setup_Windows.exe"
+            href="https://downloads.raporin.com/RaporinAI-1.0.1.msi"
             className="bg-teal-600 text-white px-6 py-3 rounded-xl hover:bg-teal-700 transition"
           >
 Uygulamayı İndir          </a>
