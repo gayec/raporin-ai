@@ -32,7 +32,7 @@ export default function DownloadPage() {
 
         {/* Gradient Buton */}
         <a
-          href="https://downloads.raporin.com/RaporinAI-1.0.21.msi"
+          href="https://downloads.raporin.com/RaporinAI-1.0.34.msi"
           className="inline-block bg-gradient-to-r from-[#17C6A3] to-[#0F918B] text-white font-semibold px-10 py-4 rounded-full shadow-md hover:shadow-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1"
         >
           💻 Uygulamayı İndir
