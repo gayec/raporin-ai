@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FaLightbulb, FaBrain, FaUsers, FaRocket, FaShieldAlt, FaChartLine } from "react-icons/fa";
 
 export default function AboutPage() {
@@ -281,18 +282,18 @@ export default function AboutPage() {
             SGK kesintilerini azaltın, zamandan tasarruf edin ve dijital dönüşümün bir parçası olun.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/download"
               className="inline-block px-8 py-4 bg-white text-teal-600 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-lg"
             >
               Hemen Başlayın
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#contact"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all"
             >
               Bize Ulaşın
-            </a>
+            </Link>
           </div>
         </motion.div>
       </section>

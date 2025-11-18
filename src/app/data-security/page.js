@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaShieldAlt, FaLock, FaUserSecret, FaServer, FaCheckCircle, FaCertificate, FaEye, FaTrash } from "react-icons/fa";
 
 export default function DataSecurityPage() {
@@ -215,7 +216,7 @@ export default function DataSecurityPage() {
               KVKK İlkelerimiz
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Kişisel Verilerin Korunması Kanunu'na tam uyum sağlıyoruz
+              Kişisel Verilerin Korunması Kanunu&apos;na tam uyum sağlıyoruz
             </p>
           </motion.div>
 
@@ -279,7 +280,7 @@ export default function DataSecurityPage() {
                 <a href="mailto:kvkk@raporin.com" className="text-teal-600 font-semibold hover:underline mx-1">
                   kvkk@raporin.com
                 </a> 
-                adresine veya sistemdeki "Veri Talebi" bölümünden iletebilirsiniz. Talepleriniz en geç 30 gün içinde yanıtlanır.
+                adresine veya sistemdeki &ldquo;Veri Talebi&rdquo; bölümünden iletebilirsiniz. Talepleriniz en geç 30 gün içinde yanıtlanır.
               </p>
             </div>
           </motion.div>
@@ -302,18 +303,18 @@ export default function DataSecurityPage() {
             Verileriniz bizimle güvende. KVKK uyumlu, şeffaf ve güvenilir bir hizmet sunuyoruz.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/download"
               className="inline-block px-8 py-4 bg-white text-teal-600 font-semibold rounded-full hover:bg-gray-100 transition-all shadow-lg"
             >
               Güvenle Başlayın
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#contact"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all"
             >
               Sorularınız mı Var?
-            </a>
+            </Link>
           </div>
         </motion.div>
       </section>

@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import StructuredData from "../components/StructuredData";
@@ -100,10 +101,13 @@ export default function RootLayout({ children }) {
         {/* 🎭 Sabit Maskot - Sağ tarafta scroll ile birlikte hareket eder */}
         <div className="fixed right-4 lg:right-8 top-24 z-40 hidden lg:block pointer-events-none">
           <div className="animate-float">
-            <img
+            <Image
               src="/raporin-mascot.png"
               alt="RaporinAI Maskot"
+              width={112}
+              height={112}
               className="w-28 h-28 drop-shadow-2xl"
+              priority
             />
           </div>
         </div>
