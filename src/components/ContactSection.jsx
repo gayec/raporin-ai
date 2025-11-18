@@ -148,10 +148,10 @@ export default function ContactSection() {
         <p className="mt-8 text-gray-500 text-sm">
           veya bize e-posta gönderin:{" "}
           <a
-            href="mailto:info@raporinai.com"
+            href="mailto:info@raporin.com"
             className="text-[#0F918B] font-medium hover:underline"
           >
-            info@raporinai.com
+            info@raporin.com
           </a>
         </p>
       </div>

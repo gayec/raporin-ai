@@ -19,7 +19,7 @@ export default function FeaturesSection() {
     {
       icon: <FaUsersCog size={26} className="text-teal-600" />,
       title: "Çoklu Kullanıcı ve Rol Yönetimi",
-      desc: "Ekip üyelerine rol ve yetki atayarak güvenli ve düzenli kullanım sağla.",
+      desc: "Ekip üyelerine rol ve yetki atayarak güvenli ve düzenli kullanım sağlar.",
       gradient: "from-emerald-100 via-teal-50 to-cyan-100",
     },
     {

@@ -9,19 +9,19 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-[#EAF9F5]/60 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between px-6 lg:px-20 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="RaporinAI" width={140} height={40} priority />
+          <Image src="/logo.png" alt="RaporinAI" width={200} height={60} priority />
         </Link>
 
         {/* Masaüstü menü */}
         <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           <Link href="/" className="hover:text-[#0F918B]">Ana Sayfa</Link>
-          <Link href="#features" className="hover:text-[#0F918B]">Özellikler</Link>
-          <Link href="#how-it-works" className="hover:text-[#0F918B]">Nasıl Çalışır</Link>
-          <Link href="#pricing" className="hover:text-[#0F918B]">Ödeme Planı</Link>
-          <Link href="#contact" className="hover:text-[#0F918B]">İletişim</Link>
+          <Link href="/about" className="hover:text-[#0F918B]">Hakkımızda</Link>
+          <Link href="/#features" className="hover:text-[#0F918B]">Özellikler</Link>
+          <Link href="/#pricing" className="hover:text-[#0F918B]">Fiyatlandırma</Link>
+          <Link href="/#contact" className="hover:text-[#0F918B]">İletişim</Link>
         </div>
 
         {/* CTA (masaüstü) */}
@@ -47,10 +47,10 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md border-t border-gray-100 flex flex-col items-center gap-4 py-4">
           <Link href="/" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
-          <Link href="#features" onClick={() => setMenuOpen(false)}>Özellikler</Link>
-          <Link href="#how-it-works" onClick={() => setMenuOpen(false)}>Nasıl Çalışır</Link>
-          <Link href="#pricing" onClick={() => setMenuOpen(false)}>Ödeme Planı</Link>
-          <Link href="#contact" onClick={() => setMenuOpen(false)}>İletişim</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
+          <Link href="/#features" onClick={() => setMenuOpen(false)}>Özellikler</Link>
+          <Link href="/#pricing" onClick={() => setMenuOpen(false)}>Fiyatlandırma</Link>
+          <Link href="/#contact" onClick={() => setMenuOpen(false)}>İletişim</Link>
           <Link
             href="/download"
             onClick={() => setMenuOpen(false)}
