@@ -16,7 +16,7 @@ export default function AboutPage() {
       name: "Yazılım Ekibi",
       role: "Teknoloji & Geliştirme",
       icon: <FaBrain size={40} className="text-teal-600" />,
-      description: "Yapay zeka ve bulut teknolojileri uzmanları"
+      description: "Yapay zeka ve yazılım teknolojileri uzmanları"
     },
     {
       name: "Veri Güvenliği",
@@ -125,11 +125,11 @@ export default function AboutPage() {
               <ol className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">1</span>
-                  <span><strong>Rapor Yükleme:</strong> PDF formatındaki SGK raporlarını sisteme yüklersiniz</span>
+                  <span><strong>Rapor Yükleme:</strong>PDF formatındaki SGK raporlarını maskeleme aracımız ile maskeleyerek sisteme yüklersiniz</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">2</span>
-                  <span><strong>OCR Analizi:</strong> Yapay zeka rapordaki tüm bilgileri otomatik okur</span>
+                  <span><strong>OCR Analizi:</strong> Yapay zeka maskelenmiş rapordaki tüm bilgileri otomatik okur</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">3</span>
@@ -160,19 +160,15 @@ export default function AboutPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-teal-600 text-xl">✓</span>
-                  <span><strong>Saniyeler İçinde Sonuç:</strong> Manuel kontrole göre 100x daha hızlı</span>
+                  <span><strong>Saniyeler İçinde Sonuç:</strong> Manuel kontrole göre 10 kat daha hızlı</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-teal-600 text-xl">✓</span>
-                  <span><strong>KVKK Uyumlu:</strong> Tüm kişisel veriler maskelenerek işlenir</span>
+                  <span><strong>KVKK Uyumlu:</strong> Hiçbir kişisel hasta verisi kaydedilmez</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-teal-600 text-xl">✓</span>
                   <span><strong>Sürekli Güncelleme:</strong> SUT değişiklikleri otomatik takip edilir</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-teal-600 text-xl">✓</span>
-                  <span><strong>Bulut Tabanlı:</strong> Her yerden, her cihazdan erişim</span>
                 </li>
               </ul>
             </motion.div>
@@ -212,54 +208,6 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-teal-600 font-semibold mb-3">{member.role}</p>
                 <p className="text-gray-600 text-sm">{member.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Yol Haritamız */}
-      <section className="py-16 px-6 lg:px-20 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Yol Haritamız</h2>
-            <p className="text-lg text-gray-600">
-              Başlangıçtan bugüne kadar olan yolculuğumuz
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-teal-200"></div>
-
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                }`}
-              >
-                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-teal-100">
-                    <div className="text-3xl font-bold text-teal-600 mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                    <p className="text-gray-600">{milestone.desc}</p>
-                  </div>
-                </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-6 h-6 bg-teal-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                </div>
-                <div className="w-5/12"></div>
               </motion.div>
             ))}
           </div>

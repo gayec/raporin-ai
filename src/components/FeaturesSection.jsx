@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaHistory, FaUsersCog, FaRobot } from "react-icons/fa";
+import { FaShieldAlt, FaHistory, FaUsersCog, FaRobot, FaLock } from "react-icons/fa";
 
 export default function FeaturesSection() {
   const features = [
@@ -9,6 +9,12 @@ export default function FeaturesSection() {
       title: "KVKK Uyumu ve Güvenli Analiz",
       desc: "Kişisel veriler maskelenerek işlenir; tüm analizler KVKK standartlarına uygundur.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
+    },
+    {
+      icon: <FaLock size={26} className="text-teal-600" />,
+      title: "RaporinAI Medula Hesabınızı İstemez",
+      desc: "Medula hesap bilgileriniz hiçbir zaman istenmez. Medula sisteminden aldığınız PDF formatındaki raporlarınızı yükleyerek güvenle analiz yapın.",
+      gradient: "from-emerald-100 via-teal-50 to-cyan-100",
     },
     {
       icon: <FaHistory size={26} className="text-teal-600" />,
@@ -20,14 +26,8 @@ export default function FeaturesSection() {
       icon: <FaUsersCog size={26} className="text-teal-600" />,
       title: "Çoklu Kullanıcı ve Rol Yönetimi",
       desc: "Ekip üyelerine rol ve yetki atayarak güvenli ve düzenli kullanım sağlar.",
-      gradient: "from-emerald-100 via-teal-50 to-cyan-100",
-    },
-    {
-      icon: <FaRobot size={26} className="text-teal-600" />,
-      title: "Medula Hesabına Girmeden Kontrol",
-      desc: "Rapor kontrolünü doğrudan platformdan yap; Medula bağlantısı gerekmez.",
-      gradient: "from-cyan-100 via-emerald-50 to-teal-100",
-    },
+      gradient: "from-cyan-100 via-teal-50 to-emerald-100",
+    }
   ];
 
   return (
