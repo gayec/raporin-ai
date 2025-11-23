@@ -15,7 +15,7 @@ export default function HowItWorks() {
       title: "İlaç Seçimi",
       desc: "Kontrol edeceğiniz ilacı seçin ve rapor yüklemeye başlayın.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-      image: "/screens/ilac-secimi-2.png",
+      image: "/screens/ilac-secimi-4.png",
       stepNumber: "01",
     },
     {

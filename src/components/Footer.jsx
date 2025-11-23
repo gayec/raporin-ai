@@ -56,38 +56,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kaynaklar */}
-          <div>
-            <h3 className="font-bold text-gray-900 mb-4">Kaynaklar</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/data-security" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
-                  Veri Güvenliği & KVKK
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
-                  Gizlilik Politikası
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
-                  Kullanım Koşulları
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
-                  SSS
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
-                  Destek Merkezi
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* İletişim */}
           <div>
             <h3 className="font-bold text-gray-900 mb-4">İletişim</h3>
@@ -96,18 +64,6 @@ export default function Footer() {
                 <FaEnvelope className="text-teal-600 mt-1 flex-shrink-0" />
                 <a href="mailto:info@raporin.com" className="hover:text-teal-600 transition-colors">
                   info@raporin.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <FaEnvelope className="text-teal-600 mt-1 flex-shrink-0" />
-                <a href="mailto:kvkk@raporin.com" className="hover:text-teal-600 transition-colors">
-                  kvkk@raporin.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <FaPhone className="text-teal-600 mt-1 flex-shrink-0" />
-                <a href="tel:+908501234567" className="hover:text-teal-600 transition-colors">
-                  0850 123 45 67
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-gray-600">
@@ -124,17 +80,6 @@ export default function Footer() {
             <p className="text-sm text-gray-600 text-center md:text-left">
               © {currentYear} RaporinAI. Tüm hakları saklıdır.
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-600 hover:text-teal-600 transition-colors">
-                Gizlilik
-              </Link>
-              <Link href="/data-security" className="text-gray-600 hover:text-teal-600 transition-colors">
-                KVKK
-              </Link>
-              <Link href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
-                Çerezler
-              </Link>
-            </div>
           </div>
         </div>
       </div>

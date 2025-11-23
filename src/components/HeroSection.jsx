@@ -5,9 +5,9 @@ import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
 
 const screenshots = [
-  { id: 1, src: "/screens/ilac-secimi-2.png", alt: "Akıllı Rapor Kontrolü" },
+  { id: 1, src: "/screens/ilac-secimi-4.png", alt: "Akıllı Rapor Kontrolü" },
   { id: 2, src: "/screens/pdf-mask-2.png", alt: "KVKK Uyumlu Rapor Maskeleme" },
-  { id: 3, src: "/screens/detay.png", alt: "Rapor Kontrol Detayı" },
+  { id: 3, src: "/screens/detay-1.png", alt: "Rapor Kontrol Detayı" },
   { id: 4, src: "/screens/kontrol.png", alt: "İşlemdeki Raporlar" },
   { id: 5, src: "/screens/sonuc.png", alt: "Rapor Kontrol Sonuçları" },
 ];

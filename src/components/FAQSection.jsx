@@ -51,7 +51,7 @@ export default function FAQSection() {
       questions: [
         {
           q: "Ücretsiz deneme süresi var mı?",
-          a: "Evet! RaporinAI şuan Beta sürecinde ve tüm özellikler tamamen ücretsizdir ve kredi kartı bilgisi gerektirmez.  Deneme sonunda memnun kalırsanız, uygun paketi seçerek devam edebilirsiniz."
+          a: "Evet! RaporinAI şuan Beta sürecinde ve tüm özellikler tamamen ücretsizdir ve kredi kartı bilgisi gerektirmez."
         }
       ]
     },
@@ -60,7 +60,19 @@ export default function FAQSection() {
       questions: [
         {
           q: "Teknik destek nasıl alınır?",
-          a: "E-posta desteğimiz ve WhatsApp iletişim kanalımız mevcuttur. Ayrıca, detaylı kullanım kılavuzu ve video eğitimler de sunuyoruz."
+          a: (
+            <div className="space-y-4">
+              <p>E-posta yoluyla bizimle iletişime geçebilirsiniz. Her rapor kontrol işlemi için benzersiz bir işlem ID oluşturuyoruz. Rapor analizi konusunda herhangi bir sorunla karşılaşırsanız, bu işlem ID'sini bizimle paylaşarak hızlı ve detaylı destek alabilirsiniz.</p>
+              <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-4 rounded-lg border border-teal-200">
+                <p className="text-sm font-semibold text-teal-800 mb-2">📋 İşlem ID Örneği:</p>
+                <img 
+                  src="/screens/islemId.png" 
+                  alt="İşlem ID Örneği" 
+                  className="rounded-lg shadow-md border border-teal-100 w-full max-w-2xl"
+                />
+              </div>
+            </div>
+          )
         }
       ]
     }
