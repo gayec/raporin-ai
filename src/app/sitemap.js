@@ -1,6 +1,6 @@
 export default function sitemap() {
-  const baseUrl = 'https://raporin.ai';
-  
+  const baseUrl = 'https://raporin.com';
+
   return [
     {
       url: baseUrl,

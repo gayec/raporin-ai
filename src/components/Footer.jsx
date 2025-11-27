@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Image src="/logo.png" alt="RaporinAI" width={150} height={60} className="mb-4" />
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              Yapay zeka destekli SGK rapor analizi ile eczanelerin dijital dönüşüm partneri.
+              Yapay zeka destekli yeni nesil eczane rapor kontrol programı ve eczanelerin dijital dönüşüm partneri.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
@@ -46,6 +46,11 @@ export default function Footer() {
               <li>
                 <Link href="/#pricing" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
                   Fiyatlandırma
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-600 hover:text-teal-600 transition-colors text-sm">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -86,4 +91,3 @@ export default function Footer() {
     </footer>
   );
 }
-  

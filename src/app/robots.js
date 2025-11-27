@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ['/api/', '/private/'],
       },
     ],
-    sitemap: 'https://raporin.ai/sitemap.xml',
+    sitemap: 'https://raporin.com/sitemap.xml',
   };
 }

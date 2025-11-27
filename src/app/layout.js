@@ -19,16 +19,20 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://raporin.com'),
   title: {
-    default: "RaporinAI — SGK Rapor Analizi | Eczaneler için Yapay Zeka Çözümü",
+    default: "RaporinAI — Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
     template: "%s | RaporinAI"
   },
   description:
-    "RaporinAI ile SGK raporlarınızı saniyeler içinde analiz edin. %100 doğruluk, sıfır hata riski. Eczaneler için yapay zeka destekli dijital rapor yönetimi çözümü.",
+    "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve SGK Rapor Kontrol programıdır. Eczane rapor hatalarını saniyeler içinde bulun ve kesintileri önleyin.",
   keywords: [
+    "Eczane Rapor Kontrol Programı",
+    "Yapay Zeka Rapor Kontrol",
+    "Eczane Yapay Zeka Rapor Kontrol",
+    "SGK Rapor Kontrol",
+    "Eczane Rapor",
     "SGK rapor analizi",
     "eczane yazılımı",
     "yapay zeka rapor analizi",
-    "SGK rapor kontrolü",
     "eczane otomasyon",
     "rapor dijitalleştirme",
     "SGK rapor yönetimi",
@@ -48,24 +52,24 @@ export const metadata = {
     type: "website",
     locale: "tr_TR",
     url: "https://raporin.com",
-    title: "RaporinAI — SGK Rapor Analizi | Eczaneler için Yapay Zeka Çözümü",
+    title: "RaporinAI — Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
     description:
-      "RaporinAI ile SGK raporlarınızı saniyeler içinde analiz edin. %100 doğruluk, sıfır hata riski. Eczaneler için yapay zeka destekli dijital rapor yönetimi çözümü.",
+      "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve SGK Rapor Kontrol programıdır. Eczane rapor hatalarını saniyeler içinde bulun.",
     siteName: "RaporinAI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RaporinAI - SGK Rapor Analizi",
+        alt: "RaporinAI - Eczane Rapor Kontrol Programı",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RaporinAI — SGK Rapor Analizi | Eczaneler için Yapay Zeka Çözümü",
+    title: "RaporinAI — Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
     description:
-      "RaporinAI ile SGK raporlarınızı saniyeler içinde analiz edin. %100 doğruluk, sıfır hata riski.",
+      "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve SGK Rapor Kontrol programıdır.",
     images: ["/og-image.png"],
     creator: "@raporinai",
   },
@@ -98,7 +102,7 @@ export default function RootLayout({ children }) {
       >
         {/* ✅ Navbar tüm sayfalarda görünür */}
         <Navbar />
-        
+
         {/* 🎭 Sabit Maskot - Sağ tarafta scroll ile birlikte hareket eder */}
         <div className="fixed right-4 lg:right-8 top-24 z-40 hidden lg:block">
           <Link href="/download" className="block cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -114,7 +118,7 @@ export default function RootLayout({ children }) {
             </div>
           </Link>
         </div>
-        
+
         <div>
           {children}
         </div>
@@ -122,4 +126,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-  

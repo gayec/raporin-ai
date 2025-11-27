@@ -21,6 +21,7 @@ export default function Navbar() {
           <Link href="/about" className="hover:text-[#0F918B]">Hakkımızda</Link>
           <Link href="/#features" className="hover:text-[#0F918B]">Özellikler</Link>
           <Link href="/#pricing" className="hover:text-[#0F918B]">Fiyatlandırma</Link>
+          <Link href="/blog" className="hover:text-[#0F918B]">Blog</Link>
           <Link href="/#contact" className="hover:text-[#0F918B]">İletişim</Link>
         </div>
 
@@ -50,6 +51,7 @@ export default function Navbar() {
           <Link href="/about" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
           <Link href="/#features" onClick={() => setMenuOpen(false)}>Özellikler</Link>
           <Link href="/#pricing" onClick={() => setMenuOpen(false)}>Fiyatlandırma</Link>
+          <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link href="/#contact" onClick={() => setMenuOpen(false)}>İletişim</Link>
           <Link
             href="/download"

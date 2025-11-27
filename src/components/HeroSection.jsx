@@ -28,7 +28,7 @@ export default function HeroSection() {
     const diff = index - activeIndex;
     const total = screenshots.length;
     const normalizedDiff = ((diff + total) % total);
-    
+
     if (normalizedDiff === 0) return 'center';
     if (normalizedDiff === 1) return 'right';
     if (normalizedDiff === total - 1) return 'left';
@@ -46,7 +46,7 @@ export default function HeroSection() {
 
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 px-4 sm:px-6 lg:px-12 xl:px-16 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-[#E8FFFB] via-[#F9FFFD] to-white">
- 
+
       {/* SOL TARAF */}
       <div className="max-w-lg lg:max-w-xl text-center lg:text-left mt-4 lg:mt-0 relative">
         {/* Başlık */}
@@ -57,16 +57,16 @@ export default function HeroSection() {
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0F918B] via-[#12A897] to-[#17C6A3] text-center lg:text-left"
         >
           <span className="flex items-center justify-center lg:justify-start gap-1">
-            <Image 
-              src="/eczane-logo.png" 
-              alt="E" 
-              width={40} 
-              height={40} 
+            <Image
+              src="/eczane-logo.png"
+              alt="E"
+              width={40}
+              height={40}
               className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
             />
             <span>czaneler İçin</span>
           </span>
-          <span className="block">Akıllı Rapor Kontrol Uygulaması</span>
+          <span className="block">Yapay Zeka Destekli Rapor Kontrol Programı</span>
         </motion.h1>
 
         {/* Değer Önerisi */}
@@ -76,8 +76,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base leading-relaxed"
         >
-          <strong>RaporinAI</strong>, eczaneler için geliştirilen yapay zeka destekli rapor analizi
-          platformudur. Manuel rapor kontrol hatalarının önüne geçerek zamandan tasarruf sağlar ve süreci dijitalleştirir.
+          <strong>RaporinAI</strong>, SGK raporlarınızı gelişmiş yapay zeka algoritmasıyla analiz eden akıllı bir <strong>Eczane Rapor Kontrol Programı</strong>dır.
+          Hataları saniyeler içinde tespit edin, kesintileri önleyin ve eczanenizin karlılığını koruyun.
         </motion.p>
 
         {/* Somut Fayda - Vurucu Kart */}
@@ -91,7 +91,7 @@ export default function HeroSection() {
             {/* Dekoratif arka plan efekti */}
             <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-amber-200/20 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-28 h-28 sm:w-40 sm:h-40 bg-yellow-300/20 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10 flex items-start gap-3 sm:gap-4">
               <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-amber-500/40 rounded-lg sm:rounded-xl flex items-center justify-center backdrop-blur-sm">
                 <span className="text-2xl sm:text-3xl">⚡</span>
@@ -114,14 +114,14 @@ export default function HeroSection() {
           <motion.a
             href="/download"
             whileHover={{ scale: 1.05 }}
-            animate={{ 
+            animate={{
               boxShadow: [
                 "0 10px 30px rgba(16, 185, 129, 0.3)",
                 "0 15px 40px rgba(16, 185, 129, 0.5)",
                 "0 10px 30px rgba(16, 185, 129, 0.3)"
               ]
             }}
-            transition={{ 
+            transition={{
               duration: 2,
               repeat: Infinity,
               ease: "easeInOut"
@@ -130,10 +130,10 @@ export default function HeroSection() {
           >
             {/* Animated gradient background */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite]" />
-            
+
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-            
+
             {/* Content */}
             <div className="relative flex items-center gap-2.5">
               <span className="text-2xl animate-bounce">🎉</span>
@@ -145,10 +145,10 @@ export default function HeroSection() {
                   Hemen Deneyin
                 </span>
               </div>
-              <svg 
-                className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -170,113 +170,112 @@ export default function HeroSection() {
       </div>
 
       {/* SAĞ TARAF - 3D CAROUSEL */}
-<div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0">
-  {/* 💻 Masaüstü görünüm - 3D Carousel */}
-  <div className="hidden lg:block relative w-full h-[350px] xl:h-[400px]">
-    <div className="relative w-full h-full flex items-center justify-center perspective-1000">
-      {screenshots.map((shot, index) => {
-        const position = getSlidePosition(index);
-        return (
-          <motion.div
-            key={shot.id}
-            initial={false}
-            animate={{
-              x: position === 'center' ? 0 : position === 'left' ? -150 : position === 'right' ? 150 : 0,
-              scale: position === 'center' ? 1 : position === 'hidden' ? 0.5 : 0.7,
-              opacity: position === 'center' ? 1 : position === 'hidden' ? 0 : 0.5,
-              zIndex: position === 'center' ? 20 : position === 'hidden' ? 0 : 10,
-              rotateY: position === 'left' ? 25 : position === 'right' ? -25 : 0,
-            }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute cursor-pointer rounded-xl overflow-hidden shadow-2xl border-2 border-gray-200"
-            style={{
-              transformStyle: 'preserve-3d',
-            }}
-            onClick={() => {
-              if (position === 'center') {
-                setSelected(shot);
-              } else if (position === 'right') {
-                nextSlide();
-              } else if (position === 'left') {
-                prevSlide();
-              }
-            }}
+      <div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0">
+        {/* 💻 Masaüstü görünüm - 3D Carousel */}
+        <div className="hidden lg:block relative w-full h-[350px] xl:h-[400px]">
+          <div className="relative w-full h-full flex items-center justify-center perspective-1000">
+            {screenshots.map((shot, index) => {
+              const position = getSlidePosition(index);
+              return (
+                <motion.div
+                  key={shot.id}
+                  initial={false}
+                  animate={{
+                    x: position === 'center' ? 0 : position === 'left' ? -150 : position === 'right' ? 150 : 0,
+                    scale: position === 'center' ? 1 : position === 'hidden' ? 0.5 : 0.7,
+                    opacity: position === 'center' ? 1 : position === 'hidden' ? 0 : 0.5,
+                    zIndex: position === 'center' ? 20 : position === 'hidden' ? 0 : 10,
+                    rotateY: position === 'left' ? 25 : position === 'right' ? -25 : 0,
+                  }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="absolute cursor-pointer rounded-xl overflow-hidden shadow-2xl border-2 border-gray-200"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                  }}
+                  onClick={() => {
+                    if (position === 'center') {
+                      setSelected(shot);
+                    } else if (position === 'right') {
+                      nextSlide();
+                    } else if (position === 'left') {
+                      prevSlide();
+                    }
+                  }}
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={320}
+                    height={220}
+                    className="object-cover rounded-xl"
+                  />
+                  {position === 'center' && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2.5">
+                      <p className="text-white text-sm font-semibold text-center">{shot.alt}</p>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
           >
-            <Image
-              src={shot.src}
-              alt={shot.alt}
-              width={320}
-              height={220}
-              className="object-cover rounded-xl"
-            />
-            {position === 'center' && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2.5">
-                <p className="text-white text-sm font-semibold text-center">{shot.alt}</p>
-              </div>
-            )}
-          </motion.div>
-        );
-      })}
-    </div>
-    
-    {/* Navigation Buttons */}
-    <button
-      onClick={prevSlide}
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
-    >
-      <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <button
-      onClick={nextSlide}
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
-    >
-      <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+            <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
+          >
+            <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
 
-    {/* Dots Indicator */}
-    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-30">
-      {screenshots.map((_, index) => (
-        <button
-          key={index}
-          onClick={() => setActiveIndex(index)}
-          className={`w-1.5 h-1.5 rounded-full transition-all ${
-            index === activeIndex ? 'bg-[#17C6A3] w-6' : 'bg-gray-300 hover:bg-gray-400'
-          }`}
-        />
-      ))}
-    </div>
-  </div>
+          {/* Dots Indicator */}
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-30">
+            {screenshots.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${index === activeIndex ? 'bg-[#17C6A3] w-6' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
 
-  {/* 📱 Mobil görünüm – Kaydırılabilir galeri */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="flex lg:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-3 w-full px-4 scrollbar-hide"
-  >
-    {screenshots.map((shot, index) => (
-      <motion.div
-        key={shot.id}
-        whileTap={{ scale: 0.97 }}
-        className="snap-center shrink-0 w-64 sm:w-72 rounded-xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer hover:shadow-xl transition-transform duration-300"
-        onClick={() => setSelected(shot)}
-      >
-        <Image
-          src={shot.src}
-          alt={shot.alt}
-          width={280}
-          height={190}
-          className="w-full object-cover rounded-xl"
-        />
-      </motion.div>
-    ))}
-  </motion.div>
-</div>
+        {/* 📱 Mobil görünüm – Kaydırılabilir galeri */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex lg:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-3 w-full px-4 scrollbar-hide"
+        >
+          {screenshots.map((shot, index) => (
+            <motion.div
+              key={shot.id}
+              whileTap={{ scale: 0.97 }}
+              className="snap-center shrink-0 w-64 sm:w-72 rounded-xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer hover:shadow-xl transition-transform duration-300"
+              onClick={() => setSelected(shot)}
+            >
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                width={280}
+                height={190}
+                className="w-full object-cover rounded-xl"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
 
 
 
