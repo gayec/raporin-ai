@@ -57,7 +57,7 @@ export default function BlogPost() {
                         <li><strong>Teşhis Uyumu:</strong> Rapordaki ICD-10 kodlarının, ilacın endikasyonu ile uyumlu olması gerekir.</li>
                         <li><strong>Doz ve Süre:</strong> İlacın kullanım dozu ve tedavi süresi, SUT limitleri dahilinde olmalıdır.</li>
                         <li><strong>Doktor Branşı:</strong> Raporu düzenleyen doktorun branşı, o ilacı yazmaya yetkili olmalıdır.</li>
-                        <li><strong>Ek Açıklamalar:</strong> Bazı ilaçlar için raporda özel açıklamaların (örn: "Endikasyon dışı onay", "Hasta katılım payından muaf") bulunması zorunludur.</li>
+                        <li><strong>Ek Açıklamalar:</strong> Bazı ilaçlar için raporda özel açıklamaların (örn: &quot;Endikasyon dışı onay&quot;, &quot;Hasta katılım payından muaf&quot;) bulunması zorunludur.</li>
                     </ul>
 
                     <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Rapor Hatalarını Önlemenin Yolları</h2>
