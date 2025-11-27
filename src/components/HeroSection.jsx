@@ -98,7 +98,7 @@ export default function HeroSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-1 sm:mb-2">
-                  SGK Kesintilerini %95'e Kadar Azaltın
+                  SGK Kesintilerini %95&apos;e Kadar Azaltın
                 </h3>
                 <p className="text-gray-800 text-xs sm:text-sm leading-relaxed">
                   Yapay zeka destekli analiz ile hatalı raporları önceden tespit edin, mali kayıplarınızı önleyin.

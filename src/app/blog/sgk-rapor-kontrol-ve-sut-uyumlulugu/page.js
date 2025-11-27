@@ -51,7 +51,7 @@ export default function BlogPost() {
 
                     <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">SUT (Sağlık Uygulama Tebliği) Uyumluluğu Neden Kritik?</h2>
                     <p>
-                        SUT, sağlık hizmetlerinin finansmanını sağlayan SGK'nın, hangi tedavileri ve ilaçları, hangi koşullarda ödeyeceğini belirleyen kurallar bütünüdür. SUT sürekli güncellenen dinamik bir yapıya sahiptir.
+                        SUT, sağlık hizmetlerinin finansmanını sağlayan SGK&apos;nın, hangi tedavileri ve ilaçları, hangi koşullarda ödeyeceğini belirleyen kurallar bütünüdür. SUT sürekli güncellenen dinamik bir yapıya sahiptir.
                     </p>
                     <ul className="list-disc pl-6 space-y-2 mb-6">
                         <li><strong>Teşhis Uyumu:</strong> Rapordaki ICD-10 kodlarının, ilacın endikasyonu ile uyumlu olması gerekir.</li>
@@ -73,7 +73,7 @@ export default function BlogPost() {
                     <div className="bg-teal-50 border-l-4 border-teal-500 p-6 my-8 rounded-r-lg">
                         <h3 className="text-lg font-bold text-teal-800 mb-2">RaporinAI ile Kesintilere Son Verin</h3>
                         <p className="text-teal-700 mb-4">
-                            RaporinAI, güncel SUT kurallarını anlık olarak takip eder ve raporlarınızı yapay zeka ile analiz eder. Hatalı raporları Medula'ya girmeden tespit ederek sizi olası kesintilerden korur.
+                            RaporinAI, güncel SUT kurallarını anlık olarak takip eder ve raporlarınızı yapay zeka ile analiz eder. Hatalı raporları Medula&apos;ya girmeden tespit ederek sizi olası kesintilerden korur.
                         </p>
                         <Link href="/download" className="inline-block bg-teal-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-teal-700 transition-colors">
                             Ücretsiz Deneyin
