@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function HowItWorks() {
   const [selectedImage, setSelectedImage] = useState(null);
-  
+
   const steps = [
     {
       icon: <FaPills size={30} className="text-teal-600" />,
@@ -83,7 +83,7 @@ export default function HowItWorks() {
             >
               {/* Görsel Alanı */}
               <div className="flex-1 w-full">
-                <div 
+                <div
                   className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-white cursor-pointer hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] group"
                   onClick={() => step.image && setSelectedImage(step.image)}
                 >
@@ -138,11 +138,29 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        {/* Video Section */}
+        <motion.div
+          className="mt-20 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
+            <iframe
+              src="https://www.youtube.com/embed/KA0H256lyyc"
+              title="RaporinAI Nasıl Çalışır?"
+              className="absolute top-0 left-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
           onClick={() => setSelectedImage(null)}
         >
@@ -152,8 +170,8 @@ export default function HowItWorks() {
           >
             <IoClose size={32} />
           </button>
-          
-          <div 
+
+          <div
             className="relative w-full max-w-7xl h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
