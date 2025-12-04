@@ -141,19 +141,55 @@ export default function HowItWorks() {
 
         {/* Video Section */}
         <motion.div
-          className="mt-20 max-w-4xl mx-auto"
+          className="mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-            <iframe
-              src="https://www.youtube.com/embed/KA0H256lyyc"
-              title="RaporinAI Nasıl Çalışır?"
-              className="absolute top-0 left-0 w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-3">
+              Video{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17C6A3] to-[#0F918B]">
+                Rehberler
+              </span>
+            </h3>
+            <p className="text-gray-600 text-lg">
+              RaporinAI kullanımını adım adım öğrenin
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Ana Video */}
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-gray-900 text-center">
+                RaporinAI Nasıl Çalışır?
+              </h4>
+              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/KA0H256lyyc"
+                  title="RaporinAI Nasıl Çalışır?"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Yardımcı Video */}
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-gray-900 text-center">
+                Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?
+              </h4>
+              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/FxFKBCjwdI4"
+                  title="Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
