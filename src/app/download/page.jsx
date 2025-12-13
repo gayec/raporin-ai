@@ -20,9 +20,15 @@ export default function DownloadPage() {
         </div>
 
         {/* Başlık – Uygulamayı indir */}
-        <h1 className="text-4xl font-bold text-[#0F918B] mb-4">
-          Uygulamayı İndir
-        </h1>
+        {/* Başlık – Uygulamayı indir */}
+        <div className="flex flex-col items-center gap-3 mb-4">
+          <h1 className="text-4xl font-bold text-[#0F918B]">
+            Uygulamayı İndir
+          </h1>
+          <span className="inline-block bg-gradient-to-r from-orange-400 to-amber-400 text-white text-sm font-extrabold px-4 py-1.5 rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default tracking-widest border border-white/50">
+            ✨ ŞİMDİ TAMAMEN ÜCRETSİZ
+          </span>
+        </div>
 
         {/* Açıklama */}
         <p className="text-gray-600 mb-10 leading-relaxed">
@@ -31,11 +37,13 @@ export default function DownloadPage() {
         </p>
 
         {/* Gradient Buton */}
+        {/* Gradient Buton */}
         <a
           href="https://downloads.raporin.com/RaporinAI-1.1.10.msi"
-          className="inline-block bg-gradient-to-r from-[#17C6A3] to-[#0F918B] text-white font-semibold px-10 py-4 rounded-full shadow-md hover:shadow-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#17C6A3] to-[#0F918B] text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 transform hover:-translate-y-1"
         >
-          💻 Uygulamayı İndir
+          <span className="text-xl">💻</span>
+          <span className="text-lg">Hemen İndir</span>
         </a>
 
         {/* Alt açıklama */}

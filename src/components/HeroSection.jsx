@@ -47,6 +47,8 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 px-4 sm:px-6 lg:px-12 xl:px-16 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-[#E8FFFB] via-[#F9FFFD] to-white">
 
+
+
       {/* SOL TARAF */}
       <div className="max-w-lg lg:max-w-xl text-center lg:text-left mt-4 lg:mt-0 relative">
         {/* Başlık */}
@@ -76,7 +78,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base leading-relaxed"
         >
-          <strong>RaporinAI</strong>, SGK raporlarınızı gelişmiş yapay zeka algoritmasıyla analiz eden akıllı bir <strong>Eczane Rapor Kontrol Programı</strong>dır.
+          <strong>RaporinAI</strong>, <strong>Eczane SGK Kesinti</strong>lerini önleyen, <strong>SUT uyum kontrolü</strong> yapan, yapay zeka destekli ve <strong>ÜCRETSİZ</strong> bir <strong>Eczane Rapor Kontrol Programı</strong>dır.
           Hataları saniyeler içinde tespit edin, kesintileri önleyin ve eczanenizin karlılığını koruyun.
         </motion.p>
 
@@ -302,6 +304,6 @@ export default function HeroSection() {
           </Dialog.Panel>
         </div>
       </Dialog>
-    </section>
+    </section >
   );
 }
