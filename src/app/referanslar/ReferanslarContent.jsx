@@ -18,6 +18,18 @@ export default function ReferanslarContent() {
         },
         {
             id: 2,
+            name: "Trabzon Eczacı Odası",
+            type: "Eczacı Odası",
+            description: "Türk Eczacılar Birliği 18. Bölge Trabzon Eczacı Odası tarafından yapılan duyuru.",
+            url: "https://www.trabzoneczaciodasi.org.tr/duyuru/eczane-rapor-kontrol-uygulamasi-7630",
+            icon: FaUniversity,
+            gradient: "from-purple-500 to-violet-600",
+            bgGradient: "from-purple-50 to-violet-50",
+            borderColor: "border-purple-200",
+            hoverBorder: "hover:border-purple-400",
+        },
+        {
+            id: 3,
             name: "Eczane Sitesi",
             type: "Haber Portalı",
             description: "Eczaneler İçin Yeni Nesil Çözüm: Ücretsiz SGK Rapor Kontrol Aracı RaporinAI Yayında",
