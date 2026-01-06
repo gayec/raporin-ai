@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-[#EAF9F5]/60 shadow-sm">
-      <div className="flex items-center justify-between px-6 lg:px-20 py-4">
+      <div className="max-w-[1440px] mx-auto w-full flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.png" alt="RaporinAI" width={200} height={60} priority />

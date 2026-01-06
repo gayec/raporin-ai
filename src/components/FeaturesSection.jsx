@@ -32,7 +32,7 @@ export default function FeaturesSection() {
 
   return (
     <section id="features" className="py-20 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1440px] mx-auto px-6">
         <motion.h2
           className="text-4xl font-bold text-center mb-12"
           initial={{ opacity: 0, y: 30 }}

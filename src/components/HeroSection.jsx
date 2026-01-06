@@ -45,7 +45,8 @@ export default function HeroSection() {
   }, [activeIndex]);
 
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 px-4 sm:px-6 lg:px-12 xl:px-16 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-[#E8FFFB] via-[#F9FFFD] to-white">
+    <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-[#E8FFFB] via-[#F9FFFD] to-white">
+      <div className="max-w-[1440px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
 
 
 
@@ -278,9 +279,7 @@ export default function HeroSection() {
           ))}
         </motion.div>
       </div>
-
-
-
+    </div>
 
       {/* MODAL - TAM BOY GÖRÜNTÜ */}
       <Dialog open={!!selected} onClose={() => setSelected(null)} className="relative z-50">
@@ -304,6 +303,6 @@ export default function HeroSection() {
           </Dialog.Panel>
         </div>
       </Dialog>
-    </section >
+    </section>
   );
 }
