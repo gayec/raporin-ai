@@ -17,13 +17,13 @@ export default function Footer() {
               Yapay zeka destekli yeni nesil eczane rapor kontrol programı ve eczanelerin dijital dönüşüm partneri.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
+              <a href="https://x.com/raporinai?s=11&t=8Lo_CQSYIVbXaj_1yPJAeA" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
                 <FaTwitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
+              <a href="https://www.linkedin.com/company/raporinai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
                 <FaLinkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
+              <a href="https://www.instagram.com/raporinai" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
                 <FaInstagram size={18} />
               </a>
             </div>
