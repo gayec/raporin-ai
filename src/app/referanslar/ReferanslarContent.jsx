@@ -40,6 +40,18 @@ export default function ReferanslarContent() {
             borderColor: "border-teal-200",
             hoverBorder: "hover:border-teal-400",
         },
+        {
+            id: 4,
+            name: "Zonguldak Eczacı Odası",
+            type: "Eczacı Odası",
+            description: "Türk Eczacılar Birliği 17. Bölge Zonguldak Eczacı Odası tarafından yapılan duyuru.",
+            url: "https://www.zeo.org.tr/duyuru/ucretsiz-sgk-rapor-kontrol-araci-6191",
+            icon: FaUniversity,
+            gradient: "from-orange-500 to-amber-600",
+            bgGradient: "from-orange-50 to-amber-50",
+            borderColor: "border-orange-200",
+            hoverBorder: "hover:border-orange-400",
+        },
     ];
 
     return (
