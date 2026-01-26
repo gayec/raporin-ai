@@ -77,6 +77,20 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* İş Birlikleri */}
+          <div>
+            <h3 className="font-bold text-gray-900 mb-4">İş Birlikleri</h3>
+            <div className="w-fit">
+              <Image
+                src="/acc-ing-26.png"
+                alt="İTÜ Çekirdek"
+                width={250}
+                height={100}
+                className="w-auto h-20 object-contain"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Alt Bölüm */}
