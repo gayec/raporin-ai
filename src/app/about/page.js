@@ -125,11 +125,11 @@ export default function AboutPage() {
               <ol className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">1</span>
-                  <span><strong>Rapor Yükleme:</strong>PDF formatındaki SGK raporlarını maskeleme aracımız ile maskeleyerek sisteme yüklersiniz</span>
+                  <span><strong>Rapor Yükleme:</strong>PDF formatındaki SGK raporlarınnı PDF formatında yüklersiniz</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">2</span>
-                  <span><strong>OCR Analizi:</strong> Yapay zeka maskelenmiş rapordaki tüm bilgileri otomatik okur</span>
+                  <span><strong>OCR Analizi:</strong> Gelişmiş OCR sistemi ile KVKK uyumlu maskeleme yapılarak hasta kişisel bilgileri otomatik maskelenir</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">3</span>

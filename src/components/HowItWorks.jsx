@@ -29,15 +29,15 @@ export default function HowItWorks() {
     {
       icon: <FaEyeSlash size={30} className="text-teal-600" />,
       title: "Maskeleme",
-      desc: "Hasta gizliliği için rapordaki kişisel bilgileri maskeleme aracımızla  rapordaki hasta ve doktor kişisel bilgilerini maskeleyerek güvenli analiz sağlayın.",
+      desc: "KVKK uyumu ve gizlilik için hasta ve doktor kişisel bilgileri otomatik olarak bilgisayarınızda maskelenir.",
       gradient: "from-cyan-100 via-emerald-50 to-teal-100",
-      image: "/screens/pdf-mask-2.png",
+      image: "/screens/pdf-mask-3.png",
       stepNumber: "03",
     },
     {
       icon: <FaRobot size={30} className="text-teal-600" />,
       title: "Yapay Zeka Analizi",
-      desc: "RaporinAI, SUT kurallarını analiz eder ve olası SGK kesintilerini erken tespit eder.",
+      desc: "RaporinAI, maskelenmiş raporu en güncel SUT kurallarına göre analiz eder ve olası SGK kesintilerini erken tespit eder.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
       image: "/screens/kontrol.png",
       stepNumber: "04",
