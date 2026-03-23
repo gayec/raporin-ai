@@ -5,7 +5,7 @@ import Image from "next/image";
 function handleDownloadClick() {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
     window.gtag("event", "conversion", {
-      send_to: "AW-18025898979",
+      send_to: "AW-18025898979/GwJKCPTBh44cEOPHtZND",
       event_category: "download",
       event_label: "windows_msi",
     });
