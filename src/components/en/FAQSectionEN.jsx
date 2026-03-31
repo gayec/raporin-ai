@@ -1,0 +1,199 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
+
+export default function FAQSectionEN() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqs = [
+    {
+      category: "General",
+      questions: [
+        {
+          q: "What is RaporinAI and how does it work?",
+          a: "RaporinAI is an AI-powered insurance report analysis platform designed for pharmacies. By uploading reports in PDF format, the AI technology detects regulatory compliance issues, ICD code errors, and potential problems within seconds. The system uses OCR (Optical Character Recognition) and NLP (Natural Language Processing) technologies to automatically analyze reports."
+        },
+        {
+          q: "Which report types can I verify?",
+          a: "RaporinAI can verify all types of insurance reports including prescription reports, chronic disease reports, special medication reports, and all other insurance report types. The system supports all report types with its continuously updated regulatory database."
+        },
+        {
+          q: "Do I need technical knowledge to use the system?",
+          a: "No, RaporinAI has an extremely user-friendly interface. Simply drag and drop your PDF report and click the analyze button. Results are presented in a clear and detailed manner. You can easily use it without any technical knowledge."
+        }
+      ]
+    },
+    {
+      category: "Regulatory Compliance",
+      questions: [
+        {
+          q: "How are regulatory non-compliance issues detected?",
+          a: "Our system continuously monitors the latest healthcare regulations database. ICD-10 diagnosis codes, drug interactions, dosage appropriateness, and regulatory restrictions are automatically checked. When non-compliance is detected, detailed explanations and correction suggestions are provided."
+        },
+        {
+          q: "How are regulatory updates tracked?",
+          a: "The RaporinAI team tracks all regulatory updates made by the health authority and automatically updates our system. Users don't need to take any action. The system always analyzes according to the most current rules."
+        }
+      ]
+    },
+    {
+      category: "Security & Data Protection",
+      questions: [
+        {
+          q: "How is personal data protected?",
+          a: "RaporinAI fully complies with GDPR and data protection standards. All patient information (ID numbers, names, etc.) is automatically masked and encrypted. Your data is stored on secure servers and is never shared with any third party."
+        }
+      ]
+    },
+    {
+      category: "Pricing & Plans",
+      questions: [
+        {
+          q: "Is there a free trial?",
+          a: "Yes! RaporinAI is currently in Beta and all features are completely free — no credit card required."
+        }
+      ]
+    },
+    {
+      category: "Technical Support",
+      questions: [
+        {
+          q: "How can I get technical support?",
+          a: "You can reach us via email. We generate a unique transaction ID for each report verification. If you encounter any issues with report analysis, you can share this transaction ID with us for quick and detailed support."
+        }
+      ]
+    }
+  ];
+
+  const toggleFAQ = (categoryIndex, questionIndex) => {
+    const index = `${categoryIndex}-${questionIndex}`;
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-[#E8FFFB] via-white to-[#F9FFFD]">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="flex justify-center mb-4">
+            <FaQuestionCircle size={50} className="text-teal-600" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Frequently Asked{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600">
+              Questions
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Find everything you want to know about RaporinAI here.
+          </p>
+        </motion.div>
+
+        {/* FAQ Categories */}
+        <div className="space-y-8">
+          {faqs.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {/* Category Title */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <span className="w-2 h-8 bg-gradient-to-b from-teal-500 to-emerald-600 rounded-full"></span>
+                {category.category}
+              </h3>
+
+              {/* Questions */}
+              <div className="space-y-3">
+                {category.questions.map((faq, questionIndex) => {
+                  const index = `${categoryIndex}-${questionIndex}`;
+                  const isOpen = openIndex === index;
+
+                  return (
+                    <div
+                      key={questionIndex}
+                      className="bg-white rounded-xl shadow-md border border-teal-100 overflow-hidden hover:shadow-lg transition-shadow"
+                    >
+                      {/* Question */}
+                      <button
+                        onClick={() => toggleFAQ(categoryIndex, questionIndex)}
+                        className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-teal-50/50 transition-colors"
+                      >
+                        <span className="font-semibold text-gray-900 pr-4">
+                          {faq.q}
+                        </span>
+                        <motion.div
+                          animate={{ rotate: isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex-shrink-0"
+                        >
+                          <FaChevronDown className="text-teal-600" size={20} />
+                        </motion.div>
+                      </button>
+
+                      {/* Answer */}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-6 pb-5 text-gray-700 leading-relaxed border-t border-teal-50 pt-4">
+                              {faq.a}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl p-8 border border-teal-100"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            Didn&apos;t Find Your Answer?
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Our support team is happy to help you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/en#contact"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-white font-semibold rounded-full hover:shadow-xl transition-all hover:scale-105"
+            >
+              Contact Us
+            </a>
+            <a
+              href="/en/download"
+              className="inline-block px-8 py-4 bg-white text-teal-600 font-semibold rounded-full border-2 border-teal-600 hover:bg-teal-50 transition-all"
+            >
+              Try for Free
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
