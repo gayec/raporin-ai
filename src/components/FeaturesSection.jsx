@@ -1,20 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaHistory, FaUsersCog, FaRobot, FaLock } from "react-icons/fa";
+import { FaShieldAlt, FaHistory, FaUsersCog } from "react-icons/fa";
+import { MdPsychology } from "react-icons/md";
 
 export default function FeaturesSection() {
   const features = [
+    {
+      icon: <MdPsychology size={36} className="text-teal-600" />,
+      title: "Güncel SUT ile Akıllı Analiz",
+      desc: "Modelimiz, güncel SUT dokümanlarıyla eğitilmiştir. Tebliğ güncellemeleri sisteme düzenli olarak yansıtılarak raporlarınız her zaman geçerli kurallara göre değerlendirilir.",
+      gradient: "from-teal-100 via-emerald-50 to-teal-50",
+    },
     {
       icon: <FaShieldAlt size={26} className="text-teal-600" />,
       title: "KVKK Uyumu ve Güvenli Analiz",
       desc: "Kişisel veriler maskelenerek işlenir; tüm analizler KVKK standartlarına uygundur.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-    },
-    {
-      icon: <FaLock size={26} className="text-teal-600" />,
-      title: "RaporinAI Medula Hesabınızı İstemez",
-      desc: "Medula hesap bilgileriniz hiçbir zaman istenmez. Medula sisteminden aldığınız PDF formatındaki raporlarınızı yükleyerek güvenle analiz yapın.",
-      gradient: "from-emerald-100 via-teal-50 to-cyan-100",
     },
     {
       icon: <FaHistory size={26} className="text-teal-600" />,
