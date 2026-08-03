@@ -2,50 +2,103 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLightbulb, FaBrain, FaUsers, FaRocket, FaShieldAlt, FaChartLine } from "react-icons/fa";
+import { FaLightbulb, FaBrain, FaRocket, FaChartLine, FaLinkedin, FaExternalLinkAlt, FaNewspaper } from "react-icons/fa";
 import FooterEN from "../../../components/en/FooterEN";
 
 export default function AboutPageEN() {
   const teamMembers = [
     {
-      name: "Pharmacist Team",
-      role: "Field Experience & Consulting",
-      icon: <FaUsers size={40} className="text-teal-600" />,
-      description: "With 20+ years of pharmacy experience, we understand real-world needs"
+      name: "Barış Keskinkılınç",
+      role: "Co-Founder & CEO",
+      initials: "BK",
+      description: "Leads the company’s strategy, operations, and growth.",
+      linkedin: "https://www.linkedin.com/in/bar%C4%B1%C5%9F-keskink%C4%B1l%C4%B1n%C3%A7-546a78199/"
     },
     {
-      name: "Software Team",
-      role: "Technology & Development",
-      icon: <FaBrain size={40} className="text-teal-600" />,
-      description: "Experts in AI and software technologies"
+      name: "Fırat Ülgay",
+      role: "Co-Founder & CTO",
+      initials: "FÜ",
+      description: "Leads product development, artificial intelligence, and technology.",
+      linkedin: "https://www.linkedin.com/in/f%C4%B1rat-%C3%BClgay-735983124/"
+    }
+  ];
+
+  const pressItems = [
+    {
+      source: "The Disruptor Magazine",
+      title: "Meet the 6 Startups Selected for Bayer’s 2026 G4A Accelerator Program",
+      language: "English",
+      url: "https://thedisruptormag.com/meet-the-6-startups-selected-for-bayers-2026-g4a-accelerator-program/"
     },
     {
-      name: "Data Security",
-      role: "GDPR & Security",
-      icon: <FaShieldAlt size={40} className="text-teal-600" />,
-      description: "Personal data protection and cybersecurity experts"
+      source: "eGirişim",
+      title: "Startups Selected for the 9th Bayer G4A Accelerator Cohort",
+      language: "Turkish",
+      url: "https://egirisim.com/2026/03/06/bayerin-g4a-girisim-hizlandirma-programinin-9-donemine-secilen-girisimler/"
+    },
+    {
+      source: "Actual Medicine",
+      title: "Startups Selected for Bayer’s G4A Accelerator Program Announced",
+      language: "Turkish",
+      url: "https://www.actualmedicine.com.tr/sayfa.asp?Sayfa=Haber&Detay=513"
     }
   ];
 
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 lg:px-20">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* Hero & Team */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E8FFFB] via-[#F9FFFD] to-white pt-32 pb-20 px-6 lg:px-20 text-gray-900">
+        <div className="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-[#17C6A3]/15 blur-3xl" />
+        <div className="absolute -bottom-44 -left-24 w-[28rem] h-[28rem] rounded-full bg-emerald-200/20 blur-3xl" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(circle_at_center,_#0F918B_1px,_transparent_1px)] bg-[length:24px_24px]" />
+
+        <div className="relative max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
+            transition={{ duration: 0.7 }}
+            className="flex h-full flex-col"
           >
-            <Image src="/logo.png" alt="RaporinAI" width={200} height={80} className="mx-auto mb-8" />
-            <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#0F918B] via-[#12A897] to-[#17C6A3] mb-6">
-              About Us
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We are an AI-powered platform that digitizes pharmacy insurance report verification processes, prevents financial losses, and saves time.
-            </p>
+            <div className="mb-10 text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">Our Team</p>
+              <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">Meet the founders</h1>
+              <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-gray-600">
+                Pharmacy expertise and engineering leadership, working as one team.
+              </p>
+            </div>
+
+            <div className="grid flex-1 grid-cols-1 divide-y divide-teal-200 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.12 }}
+                  className="group flex min-h-[300px] flex-col items-center px-6 py-10 text-center sm:px-10"
+                >
+                  <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#0F918B] to-[#17C6A3] text-xl font-extrabold text-white shadow-md">
+                    {member.initials}
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-700">
+                    Founding Team
+                  </span>
+                  <h3 className="mt-3 text-2xl font-bold text-gray-900">{member.name}</h3>
+                  <p className="mt-1.5 text-sm font-semibold text-teal-700">{member.role}</p>
+                  <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">{member.description}</p>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 pt-8 text-sm font-semibold text-[#0A66C2] transition-colors hover:text-[#084d92] hover:underline"
+                    aria-label={`View ${member.name} on LinkedIn`}
+                  >
+                    <FaLinkedin size={18} />
+                    View LinkedIn Profile
+                  </a>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -171,44 +224,6 @@ export default function AboutPageEN() {
         </div>
       </section>
 
-      {/* Our Team */}
-      <section className="py-16 px-6 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We are a multidisciplinary team of experts in pharmacy, software, and data security.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-teal-100 text-center hover:shadow-xl transition-shadow"
-              >
-                <div className="flex justify-center mb-4">
-                  {member.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-teal-600 font-semibold mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Partnerships & Accelerators */}
       <section className="py-16 px-6 lg:px-20">
         <div className="max-w-6xl mx-auto">
@@ -261,10 +276,78 @@ export default function AboutPageEN() {
                 className="w-auto h-16 object-contain mb-4"
               />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Bayer G4A</h3>
-              <p className="text-gray-600 text-sm">
-                Accepted into the Bayer G4A (Grants4Apps) program, a global digital health accelerator by Bayer.
+              <p className="text-gray-600 text-sm mb-5">
+                Selected for Bayer&apos;s 2026 G4A Accelerator Program as one of six startups chosen from 310 applications.
               </p>
+              <div className="mt-auto flex flex-col gap-2">
+                <a
+                  href="https://g4a.bayer.com.tr/girisimler"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-teal-700 font-semibold text-sm hover:underline"
+                >
+                  Official Bayer Profile <FaExternalLinkAlt size={12} />
+                </a>
+                <a
+                  href="https://thedisruptormag.com/meet-the-6-startups-selected-for-bayers-2026-g4a-accelerator-program/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-gray-600 font-semibold text-sm hover:text-teal-700 hover:underline"
+                >
+                  Read the Announcement <FaExternalLinkAlt size={12} />
+                </a>
+              </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Press & Recognition */}
+      <section className="py-16 px-6 lg:px-20 bg-white/60">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex justify-center mb-4">
+              <FaNewspaper size={44} className="text-teal-600" />
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Press &amp; Recognition</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Independent coverage and announcements featuring RaporinAI.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {pressItems.map((item, index) => (
+              <motion.a
+                key={item.source}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl p-6 shadow-md border border-gray-200 hover:border-teal-300 hover:shadow-xl transition-all"
+              >
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <span className="text-sm font-bold text-teal-700">{item.source}</span>
+                  <span className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">
+                    {item.language}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 leading-snug mb-5 group-hover:text-teal-700 transition-colors">
+                  {item.title}
+                </h3>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 group-hover:text-teal-700">
+                  Read article <FaExternalLinkAlt size={12} />
+                </span>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>

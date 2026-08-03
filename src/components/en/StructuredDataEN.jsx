@@ -52,7 +52,8 @@ export default function StructuredDataEN() {
     "sameAs": [
       "https://twitter.com/raporinai",
       "https://www.linkedin.com/company/raporinai",
-      "https://www.instagram.com/raporinai"
+      "https://www.instagram.com/raporinai",
+      "https://www.crunchbase.com/organization/raporinai"
     ]
   };
 

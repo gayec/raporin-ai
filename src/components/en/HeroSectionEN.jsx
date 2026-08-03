@@ -50,6 +50,35 @@ export default function HeroSectionEN() {
 
       {/* LEFT SIDE */}
       <div className="max-w-lg lg:max-w-xl text-center lg:text-left mt-4 lg:mt-0 relative">
+        {/* Bayer G4A Recognition */}
+        <motion.a
+          href="https://g4a.bayer.com.tr/girisimler"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-5 inline-flex items-center gap-3 rounded-2xl border border-teal-200 bg-white px-4 py-3 shadow-lg shadow-teal-900/10 transition-all hover:-translate-y-0.5 hover:border-teal-400 hover:shadow-xl"
+          aria-label="View RaporinAI on the official Bayer G4A website"
+        >
+          <Image
+            src="/bayerG4A.png"
+            alt="Bayer G4A"
+            width={105}
+            height={42}
+            className="h-9 w-auto object-contain"
+          />
+          <span className="h-9 w-px bg-gray-200" aria-hidden="true" />
+          <span className="text-left leading-tight">
+            <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700">
+              Official Selection
+            </span>
+            <span className="mt-1 block text-xs sm:text-sm font-bold text-gray-900">
+              Bayer G4A Accelerator 2026 →
+            </span>
+          </span>
+        </motion.a>
+
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

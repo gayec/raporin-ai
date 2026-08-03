@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope, FaBuilding, FaMapMarkerAlt } from "react-icons/fa";
+import { SiCrunchbase } from "react-icons/si";
 
 export default function FooterEN() {
   const currentYear = new Date().getFullYear();
@@ -25,6 +26,9 @@ export default function FooterEN() {
               </a>
               <a href="https://www.instagram.com/raporinai" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
                 <FaInstagram size={18} />
+              </a>
+              <a href="https://www.crunchbase.com/organization/raporinai" target="_blank" rel="noopener noreferrer" aria-label="RaporinAI on Crunchbase" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">
+                <SiCrunchbase size={18} />
               </a>
             </div>
           </div>
@@ -67,8 +71,12 @@ export default function FooterEN() {
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-gray-600">
+                <FaBuilding className="text-teal-600 mt-1 flex-shrink-0" />
+                <span>KairoLabs Sağlık Teknolojileri Anonim Şirketi</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
                 <FaMapMarkerAlt className="text-teal-600 mt-1 flex-shrink-0" />
-                <span>Istanbul, Turkey</span>
+                <span>Metropol İstanbul Sitesi, ATAŞEHİR/İSTANBUL</span>
               </li>
             </ul>
           </div>
@@ -84,13 +92,15 @@ export default function FooterEN() {
                 height={64}
                 className="w-auto h-14 object-contain"
               />
-              <Image
-                src="/bayerG4A.png"
-                alt="Bayer G4A Program"
-                width={160}
-                height={64}
-                className="w-auto h-14 object-contain"
-              />
+              <a href="https://g4a.bayer.com.tr/girisimler" target="_blank" rel="noopener noreferrer" aria-label="View RaporinAI on the official Bayer G4A website">
+                <Image
+                  src="/bayerG4A.png"
+                  alt="Bayer G4A Program"
+                  width={160}
+                  height={64}
+                  className="w-auto h-14 object-contain"
+                />
+              </a>
             </div>
           </div>
         </div>
