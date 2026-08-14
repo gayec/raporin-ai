@@ -7,7 +7,6 @@ export default function ContactSectionEN() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
     message: ""
   });
   const [noticeAccepted, setNoticeAccepted] = useState(false);
@@ -50,7 +49,6 @@ export default function ContactSectionEN() {
         setFormData({
           fullName: "",
           email: "",
-          phone: "",
           message: ""
         });
         setNoticeAccepted(false);
@@ -113,15 +111,6 @@ export default function ContactSectionEN() {
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17C6A3] focus:ring-1 focus:ring-[#17C6A3] outline-none transition"
               required
-              disabled={isSubmitting}
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone (optional)"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full md:col-span-2 px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17C6A3] focus:ring-1 focus:ring-[#17C6A3] outline-none transition"
               disabled={isSubmitting}
             />
           </div>
