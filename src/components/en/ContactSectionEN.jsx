@@ -1,13 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ContactNoticeModal from "../ContactNoticeModal";
 
 export default function ContactSectionEN() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "",
     message: ""
   });
+  const [noticeAccepted, setNoticeAccepted] = useState(false);
+  const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   const [statusMessage, setStatusMessage] = useState("");
@@ -22,6 +26,7 @@ export default function ContactSectionEN() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!noticeAccepted) return;
     setIsSubmitting(true);
     setSubmitStatus(null);
     setStatusMessage("");
@@ -45,8 +50,10 @@ export default function ContactSectionEN() {
         setFormData({
           fullName: "",
           email: "",
+          phone: "",
           message: ""
         });
+        setNoticeAccepted(false);
       } else {
         setSubmitStatus("error");
         setStatusMessage(responseText || "An error occurred. Please try again.");
@@ -108,6 +115,15 @@ export default function ContactSectionEN() {
               required
               disabled={isSubmitting}
             />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone (optional)"
+              value={formData.phone}
+              onChange={handleInputChange}
+              className="w-full md:col-span-2 px-4 py-3 rounded-lg border border-gray-200 focus:border-[#17C6A3] focus:ring-1 focus:ring-[#17C6A3] outline-none transition"
+              disabled={isSubmitting}
+            />
           </div>
 
           <textarea
@@ -121,9 +137,33 @@ export default function ContactSectionEN() {
             disabled={isSubmitting}
           ></textarea>
 
+          {/* Contact Form Privacy Notice Consent */}
+          <label className="flex items-start gap-3 mb-6 text-left cursor-pointer">
+            <input
+              type="checkbox"
+              name="noticeAccepted"
+              checked={noticeAccepted}
+              onChange={(e) => setNoticeAccepted(e.target.checked)}
+              className="mt-0.5 w-4 h-4 shrink-0 rounded border-gray-300 text-[#17C6A3] accent-[#17C6A3] focus:ring-1 focus:ring-[#17C6A3] cursor-pointer"
+              required
+              disabled={isSubmitting}
+            />
+            <span className="text-sm text-gray-600 leading-relaxed">
+              I have read the{" "}
+              <button
+                type="button"
+                onClick={() => setIsNoticeModalOpen(true)}
+                className="text-[#0F918B] font-medium hover:underline"
+              >
+                privacy notice
+              </button>{" "}
+              regarding the personal data I share through this contact form.
+            </span>
+          </label>
+
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !noticeAccepted}
             className="px-8 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-[#17C6A3] to-[#0F918B] hover:shadow-lg hover:shadow-[#0F918B]/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Send"}
@@ -155,6 +195,11 @@ export default function ContactSectionEN() {
           </a>
         </p>
       </div>
+
+      <ContactNoticeModal
+        open={isNoticeModalOpen}
+        onClose={() => setIsNoticeModalOpen(false)}
+      />
     </section>
   );
 }
