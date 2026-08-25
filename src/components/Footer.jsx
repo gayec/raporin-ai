@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import CookieSettingsLink from "./CookieSettingsLink";
 import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope, FaBuilding, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Footer() {
@@ -103,6 +104,13 @@ export default function Footer() {
             <p className="text-sm text-gray-600 text-center md:text-left">
               © {currentYear} RaporinAI. Tüm hakları saklıdır.
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
+              <Link href="/cerez-politikasi" className="text-gray-600 hover:text-teal-600 transition-colors">
+                Çerez Politikası
+              </Link>
+              <CookieSettingsLink label="Çerez Ayarları" className="no-underline hover:underline" />
+            </div>
           </div>
         </div>
       </div>

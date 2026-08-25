@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import StructuredData from "../components/StructuredData";
 import LayoutWrapper from "../components/LayoutWrapper";
+import CookieConsent from "../components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -107,29 +107,45 @@ export default function RootLayout({ children }) {
     <html lang="tr">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/*
+          Google Consent Mode v2 — varsayılan olarak tüm rıza sinyalleri "denied".
+          Bu script her şeyden önce çalışmalı; kullanıcı rıza verdiğinde
+          CookieConsent bileşeni "consent update" gönderir ve Google Ads etiketini yükler.
+        */}
+        <script
+          id="google-consent-default"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied',
+                functionality_storage: 'denied',
+                personalization_storage: 'denied',
+                security_storage: 'granted',
+                wait_for_update: 500
+              });
+              gtag('set', 'ads_data_redaction', true);
+              gtag('set', 'url_passthrough', true);
+            `,
+          }}
+        />
         <StructuredData />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-        {/* Google Ads Tag */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18025898979"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18025898979');
-          `}
-        </Script>
         <LayoutWrapper />
 
         <div>
           {children}
         </div>
+
+        {/* Çerez bandı + çerez yönetim paneli (TR ve EN tüm sayfalarda) */}
+        <CookieConsent />
       </body>
     </html>
   );

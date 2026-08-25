@@ -5,6 +5,7 @@ import { FaPills, FaFileUpload, FaEyeSlash, FaRobot, FaCheckCircle } from "react
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { useState } from "react";
+import ConsentYouTube from "./ConsentYouTube";
 
 export default function HowItWorks() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -165,13 +166,7 @@ export default function HowItWorks() {
                 RaporinAI Nasıl Çalışır?
               </h4>
               <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/KA0H256lyyc"
-                  title="RaporinAI Nasıl Çalışır?"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <ConsentYouTube videoId="KA0H256lyyc" title="RaporinAI Nasıl Çalışır?" />
               </div>
             </div>
 
@@ -181,13 +176,7 @@ export default function HowItWorks() {
                 Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?
               </h4>
               <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/FxFKBCjwdI4"
-                  title="Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <ConsentYouTube videoId="FxFKBCjwdI4" title="Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?" />
               </div>
             </div>
           </div>

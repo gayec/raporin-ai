@@ -5,6 +5,7 @@ import { FaPills, FaFileUpload, FaEyeSlash, FaRobot, FaCheckCircle } from "react
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { useState } from "react";
+import ConsentYouTube from "../ConsentYouTube";
 
 export default function HowItWorksEN() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -161,13 +162,7 @@ export default function HowItWorksEN() {
                 How Does RaporinAI Work?
               </h4>
               <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/KA0H256lyyc"
-                  title="How Does RaporinAI Work?"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <ConsentYouTube videoId="KA0H256lyyc" title="How Does RaporinAI Work?" lang="en" />
               </div>
             </div>
 
@@ -177,13 +172,7 @@ export default function HowItWorksEN() {
                 How to Download Reports in PDF Format?
               </h4>
               <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/FxFKBCjwdI4"
-                  title="How to Download Reports in PDF Format?"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <ConsentYouTube videoId="FxFKBCjwdI4" title="How to Download Reports in PDF Format?" lang="en" />
               </div>
             </div>
           </div>
