@@ -106,7 +106,13 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
-              <Link href="/cerez-politikasi" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <Link href="/kvkk" className="text-gray-600 hover:text-teal-600 transition-colors">
+                KVKK ve Hukuki Metinler
+              </Link>
+              <Link href="/kvkk/kullanim-kosullari-ve-uyelik-sozlesmesi" className="text-gray-600 hover:text-teal-600 transition-colors">
+                Kullanım Koşulları ve Üyelik Sözleşmesi
+              </Link>
+              <Link href="/kvkk/cerez-politikasi" className="text-gray-600 hover:text-teal-600 transition-colors">
                 Çerez Politikası
               </Link>
               <CookieSettingsLink label="Çerez Ayarları" className="no-underline hover:underline" />

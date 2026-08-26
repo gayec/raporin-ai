@@ -21,7 +21,31 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/cerez-politikasi`,
+      url: `${baseUrl}/kvkk`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/kvkk/kullanim-kosullari-ve-uyelik-sozlesmesi`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/kvkk/eczaneler-icin-aydinlatma-metni`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/kvkk/uygulama-cerez-aydinlatma-metni`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/kvkk/cerez-politikasi`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,

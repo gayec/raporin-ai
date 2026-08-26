@@ -17,7 +17,7 @@ import {
 const GOOGLE_ADS_ID = "AW-18025898979";
 
 const TR = {
-  policyHref: "/cerez-politikasi",
+  policyHref: "/kvkk/cerez-politikasi",
   policyLabel: "Çerez Politikası",
   bannerText:
     "İnternet sayfamızda çerezler yoluyla kişisel veri işlenmekte olup, zorunlu çerezler internet sitemizin çalışması amacıyla gerekli olan çerezlerdir ve kapatılamaz. Diğer çerezler ise açık rıza vermeniz halinde kullanılacaktır. Bu çerezlerin türlerine ve işlevlerine çerez yönetim panelinden erişebilirsiniz. Çerezlere dair tercihlerinizi panel vasıtasıyla yönetmeniz mümkün olup çerezlerle ilgili detaylı bilgi içeren aydınlatma metnine buradan ulaşabilirsiniz.",
@@ -70,7 +70,7 @@ const TR = {
 };
 
 const EN = {
-  policyHref: "/cerez-politikasi",
+  policyHref: "/kvkk/cerez-politikasi",
   policyLabel: "Cookie Policy",
   bannerText:
     "We process personal data through cookies on our website. Strictly necessary cookies are required for the website to function and cannot be switched off. All other cookies are used only if you give your explicit consent. You can review the types and functions of these cookies in the cookie management panel and change your preferences there at any time. Detailed information is available in our cookie notice.",

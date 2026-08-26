@@ -114,7 +114,13 @@ export default function FooterEN() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
-              <Link href="/cerez-politikasi" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <Link href="/kvkk" className="text-gray-600 hover:text-teal-600 transition-colors">
+                Legal &amp; KVKK
+              </Link>
+              <Link href="/kvkk/kullanim-kosullari-ve-uyelik-sozlesmesi" className="text-gray-600 hover:text-teal-600 transition-colors">
+                Terms &amp; Membership Agreement
+              </Link>
+              <Link href="/kvkk/cerez-politikasi" className="text-gray-600 hover:text-teal-600 transition-colors">
                 Cookie Policy
               </Link>
               <CookieSettingsLink label="Cookie Settings" className="no-underline hover:underline" />
