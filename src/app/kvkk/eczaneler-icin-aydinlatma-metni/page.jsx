@@ -124,7 +124,12 @@ export default function EczanelerIcinAydinlatmaMetniPage() {
       <Heading>Kişisel Verilerinizin Paylaşılması</Heading>
       <p>
         Yukarıda izah ettiğimiz süreçlerde toplanıp işlenen kişisel verileriniz veri sorumlusu
-        Şirket tarafından işlenmekte, üçüncü kişilerle paylaşılmamaktadır.
+        Şirket tarafından işlenmektedir. Kişisel verileriniz Şirket’in uzman kişi/kurumlardan hizmet
+        alması nedeniyle veri sağlayıcı tedarikçilere aktarılabilmektedir. Bu aktarım kişisel
+        verilerinizin güvenli ortamlarda saklanması amacıyla ve Kanun’un 5. maddesinin 2. fıkrasında
+        yer alan “f) İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri
+        sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması” hukuki sebebine dayalı
+        olarak gerçekleştirilmektedir.
       </p>
 
       <Heading>Kişisel Verilerinizin Korunması, Saklanması ve İmhası</Heading>
