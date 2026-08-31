@@ -12,7 +12,23 @@ export default function FAQSection() {
       questions: [
         {
           q: "RaporinAI nedir ve nasıl çalışır?",
-          a: "RaporinAI, eczaneler için geliştirilmiş yapay zeka destekli bir SGK rapor analiz platformudur. PDF formatındaki raporları yükleyerek, yapay zeka teknolojisi ile SUT uyumluluğunu, ICD kod doğruluğunu ve olası hataları saniyeler içinde tespit eder. Sistem, OCR (optik karakter tanıma) ve NLP (doğal dil işleme) teknolojilerini kullanarak raporları otomatik analiz eder."
+          a: "RaporinAI, eczaneler için geliştirilmiş yapay zeka destekli bir reçete ve rapor kontrol programıdır. Uygulama içindeki Medula ekranından giriş yapar, fatura türü ve dönem seçip o dönemin reçetelerini RaporinAI'ye aktarırsınız. Sonrasında ister bir reçeteye girip tek bir ilacı kontrol edersiniz, ister tek tıkla dönemin tamamını analize gönderirsiniz. Raporlar güncel SUT kurallarına göre değerlendirilir; tanı uyumu ve reçete–rapor doz uyumu da kontrol edilir."
+        },
+        {
+          q: "Medula entegrasyonu nasıl çalışıyor? Medula şifremi vermem gerekiyor mu?",
+          a: "RaporinAI, uygulamanın içinde açılan güvenli bir tarayıcı üzerinden Medula Eczane'ye kendi kullanıcı bilgilerinizle giriş yapmanızı sağlar. Giriş bilgileriniz bizim sunucularımıza gönderilmez ve orada saklanmaz. İsterseniz otomatik giriş özelliğini açabilirsiniz; bu durumda kullanıcı adı ve şifreniz şifrelenerek yalnızca kendi bilgisayarınızda saklanır ve dilediğiniz zaman Profil ekranından silebilirsiniz."
+        },
+        {
+          q: "Her seferinde reçeteleri baştan mı aktarmam gerekiyor?",
+          a: "Hayır. Bir dönemi bir kez aktarmanız yeterli. Sonradan yeni reçeteler eklendiğinde \"Aktarımı Güncelle\" demeniz yeterlidir; sadece eksik olanlar tamamlanır."
+        },
+        {
+          q: "Toplu analiz nedir, tekil analizden farkı ne?",
+          a: "Tekil analizde bir reçeteye girip tek bir ilacı kontrol edersiniz. Toplu analizde ise dönemdeki tüm raporlu ilaçlar tek tıkla analize gider ve arka planda ilerler; bu sırada uygulamayı kullanmaya devam edebilirsiniz. Analiz bittiğinde uygun olmayanları tek filtreyle listeleyebilirsiniz."
+        },
+        {
+          q: "Tek bir raporu PDF yükleyerek kontrol edebilir miyim?",
+          a: "Evet. Medula'dan PDF olarak indirdiğiniz bir raporu doğrudan yükleyip kontrol edebilirsiniz. Elinizdeki tekil bir raporu hızlıca değerlendirmek istediğinizde bu yol daha pratiktir."
         },
         {
           q: "Hangi rapor türlerini kontrol edebilirim?",
@@ -20,7 +36,7 @@ export default function FAQSection() {
         },
         {
           q: "Sistemi kullanmak için teknik bilgiye ihtiyacım var mı?",
-          a: "Hayır, RaporinAI son derece kullanıcı dostu bir arayüze sahiptir. Sadece PDF raporunuzu sürükle-bırak yöntemiyle yükleyip, analiz butonuna tıklamanız yeterlidir. Sonuçlar anlaşılır ve detaylı şekilde sunulur. Herhangi bir teknik bilgiye ihtiyaç duymadan kolayca kullanabilirsiniz."
+          a: "Hayır. Medula'ya her zamanki gibi giriş yapıyor, fatura türü ile dönemi seçip aktarımı başlatıyorsunuz; gerisini RaporinAI hallediyor. Analizi başlatmak için tek bir tıklama yeterli. Sonuçlar anlaşılır ve kriter bazında sunulur; herhangi bir teknik bilgiye ihtiyaç duymadan kullanabilirsiniz."
         }
       ]
     },
@@ -30,6 +46,10 @@ export default function FAQSection() {
         {
           q: "SUT uyumsuzlukları nasıl tespit edilir?",
           a: "Sistemimiz, güncel SUT (Sağlık Uygulama Tebliği) veritabanını sürekli takip eder. Rapordaki ICD-10 tanı kodları, ilaç etkileşimleri, doz uygunluğu ve SUT'ta belirtilen kısıtlamalar otomatik olarak kontrol edilir. Uyumsuzluk tespit edildiğinde, detaylı açıklama ve düzeltme önerileri sunulur."
+        },
+        {
+          q: "Reçete–rapor doz kontrolü nedir?",
+          a: "SUT kriterlerinin tamamı karşılansa bile, reçetede yazılan doz rapordaki tedavi şemasının izin verdiği dozu aşıyorsa ilacın bedeli ödenmez. RaporinAI, reçetedeki doz ile rapordaki dozu otomatik karşılaştırır ve aşım olduğunda ilacı uygun saymayarak sizi uyarır."
         },
         {
           q: "SUT güncellemeleri nasıl takip edilir?",
@@ -42,7 +62,7 @@ export default function FAQSection() {
       questions: [
         {
           q: "Kişisel veriler nasıl korunur?",
-          a: "RaporinAI, KVKK (Kişisel Verilerin Korunması Kanunu) standartlarına tam uyumludur. Tüm hasta bilgileri (TC kimlik no, ad-soyad, vb.) otomatik olarak maskelenir ve şifrelenir. Verilriniz güvenli sunucularında saklanır ve hiçbir üçüncü tarafla paylaşılmaz."
+          a: "RaporinAI, KVKK (Kişisel Verilerin Korunması Kanunu) standartlarına uygun şekilde çalışır. Hasta ve Doktora ait kişisel bilgiler (TC kimlik numarası, ad ve soyad, rapor numarası vb.)  hiçbir zaman sunucularımıza gönderilmez; Analiz yalnızca tanı kodları, etkin madde ve doz gibi klinik alanlarla tamamen anonim olarak yapılır."
         }
       ]
     },
@@ -52,27 +72,6 @@ export default function FAQSection() {
         {
           q: "Ücretsiz deneme süresi var mı?",
           a: "Evet! RaporinAI şuan Beta sürecinde ve tüm özellikler tamamen ücretsizdir ve kredi kartı bilgisi gerektirmez."
-        }
-      ]
-    },
-    {
-      category: "Teknik Destek",
-      questions: [
-        {
-          q: "Teknik destek nasıl alınır?",
-          a: (
-            <div className="space-y-4">
-              <p>E-posta yoluyla bizimle iletişime geçebilirsiniz. Her rapor kontrol işlemi için benzersiz bir işlem ID oluşturuyoruz. Rapor analizi konusunda herhangi bir sorunla karşılaşırsanız, bu işlem ID'sini bizimle paylaşarak hızlı ve detaylı destek alabilirsiniz.</p>
-              <div className="bg-gradient-to-br from-teal-50 to-emerald-50 p-4 rounded-lg border border-teal-200">
-                <p className="text-sm font-semibold text-teal-800 mb-2">📋 İşlem ID Örneği:</p>
-                <img 
-                  src="/screens/islemId.png" 
-                  alt="İşlem ID Örneği" 
-                  className="rounded-lg shadow-md border border-teal-100 w-full max-w-2xl"
-                />
-              </div>
-            </div>
-          )
         }
       ]
     }

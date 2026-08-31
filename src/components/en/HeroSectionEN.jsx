@@ -3,13 +3,15 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
+import Screenshot from "../Screenshot";
+import { FaGlobe, FaLayerGroup, FaPills } from "react-icons/fa";
 
 const screenshots = [
-  { id: 1, src: "/screens/ilac-secimi-4.png", alt: "Smart Report Control" },
-  { id: 2, src: "/screens/pdf-mask-3.png", alt: "GDPR-Compliant Report Masking" },
-  { id: 3, src: "/screens/detay-1.png", alt: "Report Control Details" },
-  { id: 4, src: "/screens/kontrol.png", alt: "Reports in Progress" },
-  { id: 5, src: "/screens/sonuc.png", alt: "Report Control Results" },
+  { id: 1, src: "/screens/recete-aktarimi.png", alt: "Prescription Import From the Portal" },
+  { id: 2, src: "/screens/toplu-analiz.png", alt: "One-Click Bulk Analysis" },
+  { id: 3, src: "/screens/recete-detay.png", alt: "Prescription Detail & Single Analysis" },
+  { id: 4, src: "/screens/analiz-sonuclari.png", alt: "Bulk Analysis Results" },
+  { id: 5, src: "/screens/detay-2.png", alt: "Criterion-Based Analysis Detail" },
 ];
 
 export default function HeroSectionEN() {
@@ -97,7 +99,7 @@ export default function HeroSectionEN() {
           transition={{ duration: 0.8 }}
           className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base leading-relaxed"
         >
-          <strong>RaporinAI</strong> is a <strong>cloud-based SaaS platform</strong> powered by AI that instantly tells pharmacists whether a medication is <strong>eligible for reimbursement</strong> by public and private insurance institutions. It verifies prescriptions against <strong>regulatory rules</strong>, detects errors in seconds, and helps prevent <strong>claim rejections</strong> — currently <strong>FREE</strong>.
+          <strong>RaporinAI</strong> is a <strong>cloud-based SaaS platform</strong> powered by AI that takes the prescription and report verification workload off pharmacists. It tells you instantly whether a medication is <strong>eligible for reimbursement</strong>, checks prescriptions against <strong>regulatory rules</strong> in seconds rather than hours, and surfaces problems before a claim is submitted — preventing <strong>claim rejections</strong>. Currently <strong>FREE</strong>.
         </motion.p>
 
         {/* Key Benefit Card */}
@@ -184,7 +186,29 @@ export default function HeroSectionEN() {
       </div>
 
       {/* RIGHT SIDE - 3D CAROUSEL */}
-      <div className="relative flex justify-center items-center w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0">
+      <div className="relative flex flex-col justify-center items-center w-full lg:w-1/2 mt-6 sm:mt-8 lg:mt-0">
+        {/* Feature chips */}
+        <motion.ul
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-4 flex flex-wrap justify-center gap-2"
+        >
+          {[
+            { icon: <FaGlobe size={12} />, label: "Automatic prescription import" },
+            { icon: <FaLayerGroup size={12} />, label: "One-click bulk analysis" },
+            { icon: <FaPills size={12} />, label: "Prescription–report dosage check" },
+          ].map((chip) => (
+            <li
+              key={chip.label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white/90 px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-teal-800 shadow-sm backdrop-blur-sm"
+            >
+              <span className="text-teal-600">{chip.icon}</span>
+              {chip.label}
+            </li>
+          ))}
+        </motion.ul>
         {/* Desktop view - 3D Carousel */}
         <div className="hidden lg:block relative w-full h-[350px] xl:h-[400px]">
           <div className="relative w-full h-full flex items-center justify-center perspective-1000">
@@ -216,7 +240,7 @@ export default function HeroSectionEN() {
                     }
                   }}
                 >
-                  <Image
+                  <Screenshot
                     src={shot.src}
                     alt={shot.alt}
                     width={320}
@@ -279,7 +303,7 @@ export default function HeroSectionEN() {
               className="snap-center shrink-0 w-64 sm:w-72 rounded-xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer hover:shadow-xl transition-transform duration-300"
               onClick={() => setSelected(shot)}
             >
-              <Image
+              <Screenshot
                 src={shot.src}
                 alt={shot.alt}
                 width={280}

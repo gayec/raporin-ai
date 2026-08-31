@@ -10,9 +10,13 @@ export const metadata = {
     template: "%s | RaporinAI"
   },
   description:
-    "RaporinAI is the most advanced AI-powered pharmacy report verification platform. Detect report errors in seconds and prevent insurance deductions. Free during beta.",
+    "RaporinAI is an AI-powered pharmacy report verification platform with insurance portal integration. Import a whole claim period, analyze every reported medicine in one click, and prevent insurance deductions before you submit. Free during beta.",
   keywords: [
     "Pharmacy Report Verification",
+    "insurance portal integration",
+    "bulk prescription verification",
+    "bulk report analysis",
+    "prescription dosage check",
     "AI Report Analysis",
     "Pharmacy AI Software",
     "Insurance Report Control",
@@ -53,7 +57,7 @@ export const metadata = {
     url: "https://raporin.com/en",
     title: "RaporinAI — FREE AI-Powered Pharmacy Report Verification Platform",
     description:
-      "RaporinAI is the most advanced AI-powered pharmacy report verification platform. Detect report errors in seconds and prevent insurance deductions.",
+      "Import a whole claim period from the insurance portal and analyze every reported medicine in one click. Detect report errors in seconds and prevent insurance deductions.",
     siteName: "RaporinAI",
     images: [
       {
@@ -68,7 +72,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "RaporinAI — FREE AI-Powered Pharmacy Report Verification Platform",
     description:
-      "RaporinAI is the most advanced AI-powered pharmacy report verification platform.",
+      "Import a whole claim period from the insurance portal and analyze every reported medicine in one click.",
     images: ["/og-image.png"],
     creator: "@raporinai",
   },

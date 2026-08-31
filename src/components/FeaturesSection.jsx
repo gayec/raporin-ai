@@ -1,43 +1,82 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaHistory, FaUsersCog } from "react-icons/fa";
-import { MdPsychology } from "react-icons/md";
+import Image from "next/image";
+import {
+  FaShieldAlt,
+  FaHistory,
+  FaUsersCog,
+  FaGlobe,
+  FaLayerGroup,
+  FaPills,
+} from "react-icons/fa";
+import { RiSparkling2Fill } from "react-icons/ri";
 
 export default function FeaturesSection() {
   const features = [
     {
-      icon: <MdPsychology size={36} className="text-teal-600" />,
+      Icon: RiSparkling2Fill,
       title: "Güncel SUT ile Akıllı Analiz",
-      desc: "Modelimiz, güncel SUT dokümanlarıyla eğitilmiştir. Tebliğ güncellemeleri sisteme düzenli olarak yansıtılarak raporlarınız her zaman geçerli kurallara göre değerlendirilir.",
-      gradient: "from-teal-100 via-emerald-50 to-teal-50",
+      desc: "Modelimiz güncel SUT dokümanlarıyla eğitilmiştir. Tebliğ güncellemeleri sisteme düzenli olarak yansıtılır; raporlarınız her zaman geçerli kurallara göre değerlendirilir.",
+      layout: "featured",
     },
     {
-      icon: <FaShieldAlt size={26} className="text-teal-600" />,
+      Icon: FaGlobe,
+      title: "Medula Entegrasyonu",
+      desc: "Reçete ve rapor bilgileri doğrudan Medula'dan alınır. Kontrol için gereken her şey uygulamada hazır bekler.",
+      layout: "normal",
+    },
+    {
+      Icon: FaLayerGroup,
+      title: "Tek Tıkla Toplu Analiz",
+      desc: "Seçtiğiniz dönemin tüm raporlu ilaçları tek tıkla analize gider. Analiz arka planda sürerken siz çalışmaya devam edersiniz.",
+      layout: "normal",
+    },
+    {
+      Icon: FaPills,
+      title: "Reçete–Rapor Doz Kontrolü",
+      desc: "Yapay zeka, reçetedeki doz ile rapordaki dozu karşılaştırır ve doz uyumsuzluğunu hemen tespit eder.",
+      layout: "normal",
+    },
+    {
+      Icon: FaShieldAlt,
       title: "KVKK Uyumu ve Güvenli Analiz",
-      desc: "Kişisel veriler maskelenerek işlenir; tüm analizler KVKK standartlarına uygundur.",
-      gradient: "from-teal-100 via-emerald-50 to-cyan-100",
+      desc: "Hasta TC, ad-soyad ve rapor numarası hiçbir zaman gönderilmez ve saklanmaz; PDF akışında kişisel alanlar bilgisayarınızda maskelenir.",
+      layout: "normal",
     },
     {
-      icon: <FaHistory size={26} className="text-teal-600" />,
-      title: "Geçmiş Raporların Takibi",
-      desc: "Tüm rapor analiz geçmişine eriş; sonuçları anında görüntüle ve karşılaştır.",
-      gradient: "from-teal-50 via-cyan-50 to-emerald-100",
+      Icon: FaHistory,
+      title: "Dönem Bazlı Takip ve Geçmiş",
+      desc: "Her fatura dönemi ayrı ayrı durur. Geçmiş dönemlere dönüp sonuçları istediğiniz zaman yeniden görüntüleyebilirsiniz.",
+      layout: "wide",
     },
     {
-      icon: <FaUsersCog size={26} className="text-teal-600" />,
-      title: "Çoklu Kullanıcı ve Rol Yönetimi",
-      desc: "Ekip üyelerine rol ve yetki atayarak güvenli ve düzenli kullanım sağlar.",
-      gradient: "from-cyan-100 via-teal-50 to-emerald-100",
-    }
+      Icon: FaUsersCog,
+      title: "Ekip Notları ve Rol Yönetimi",
+      desc: "Ekip üyelerine rol ve yetki atayın; rapor kontrolleri üzerine not bırakarak eczane içi iş akışını tek yerden yönetin.",
+      layout: "wide",
+    },
   ];
 
+  const spanClass = {
+    featured: "md:col-span-2 lg:col-span-2 lg:row-span-2",
+    normal: "",
+    wide: "md:col-span-2 lg:col-span-2",
+  };
+
   return (
-    <section id="features" className="py-20 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
-      <div className="max-w-[1440px] mx-auto px-6">
+    <section id="features" className="relative py-24 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
+      {/* Arka plan dokusu */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-teal-200/20 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-emerald-200/20 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-[1440px] mx-auto px-6">
         <motion.h2
-          className="text-4xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           Öne Çıkan{" "}
@@ -45,24 +84,85 @@ export default function FeaturesSection() {
             Özellikler
           </span>
         </motion.h2>
+        <motion.p
+          className="text-center text-gray-600 max-w-2xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Medula entegrasyonu ile dönemin tamamını aktarın, tek tıkla analiz edin.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((f, i) => (
-            <motion.div
-              key={i}
-              className={`group relative overflow-hidden rounded-2xl p-6 border border-teal-100 shadow-sm transition-all duration-300 bg-gradient-to-br ${f.gradient} hover:shadow-lg hover:-translate-y-1`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-            >
-              <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/50 blur-2xl opacity-70 group-hover:opacity-100 transition" />
-              <div className="pointer-events-none absolute -bottom-16 -left-10 w-52 h-52 rounded-full bg-white/30 blur-3xl" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {features.map((f, i) => {
+            const { Icon } = f;
 
-              <div className="mb-4">{f.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
-              <p className="text-sm text-gray-700 leading-relaxed">{f.desc}</p>
-            </motion.div>
-          ))}
+            if (f.layout === "featured") {
+              return (
+                <motion.div
+                  key={f.title}
+                  className={`${spanClass.featured} group relative overflow-hidden rounded-3xl border border-teal-100 shadow-xl shadow-teal-900/10`}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/akılli-analiz-arka-plan.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Metin okunabilirliği için yumuşak açılım */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+
+                  <div className="relative flex h-full flex-col p-8">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#12A897] to-[#17C6A3] text-white shadow-lg shadow-teal-900/20 transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={34} />
+                    </div>
+                    <h3 className="mt-7 text-2xl lg:text-3xl font-bold text-gray-900 leading-snug">
+                      {f.title}
+                    </h3>
+                    <p className="mt-4 text-gray-700 leading-relaxed lg:text-lg max-w-xl">
+                      {f.desc}
+                    </p>
+                    <div className="mt-auto pt-8">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-700 ring-1 ring-teal-200 backdrop-blur-sm">
+                        Yapay Zeka Motoru
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            }
+
+            const isWide = f.layout === "wide";
+
+            return (
+              <motion.div
+                key={f.title}
+                className={`${spanClass[f.layout]} group relative overflow-hidden rounded-2xl border border-teal-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.05 * i }}
+              >
+                <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-teal-100/60 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className={`relative ${isWide ? "flex items-start gap-5" : ""}`}>
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-teal-50 to-emerald-100 text-teal-600 ring-1 ring-teal-100 transition-all duration-300 group-hover:from-[#12A897] group-hover:to-[#17C6A3] group-hover:text-white group-hover:ring-teal-300">
+                    <Icon size={22} />
+                  </div>
+                  <div className={isWide ? "" : "mt-5"}>
+                    <h3 className="text-lg font-semibold text-gray-900">{f.title}</h3>
+                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

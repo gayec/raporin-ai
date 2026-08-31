@@ -18,13 +18,21 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://raporin.com'),
   title: {
-    default: "RaporinAI — ÜCRETSİZ Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
+    default: "RaporinAI — ÜCRETSİZ Eczane Reçete ve Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
     template: "%s | RaporinAI"
   },
   description:
-    "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve Eczane Rapor Kontrol Programıdır. Eczane rapor hatalarını saniyeler içinde bulun ve kesintileri önleyin.",
+    "RaporinAI, yapay zeka destekli bir Eczane Reçete ve Rapor Kontrol Programıdır. Dönemin tüm reçetelerini tek tıkla analiz edin, SUT uyumsuzluklarını ve SGK kesintilerini fatura teslim etmeden önce önleyin.",
   keywords: [
+    "Eczane Reçete ve Rapor Kontrol Programı",
     "Eczane Rapor Kontrol Programı",
+    "Eczane Reçete Kontrol Programı",
+    "Medula entegrasyonu",
+    "Medula reçete kontrol",
+    "toplu reçete kontrolü",
+    "toplu rapor kontrolü",
+    "Medula rapor kontrol programı",
+    "reçete rapor doz kontrolü",
     "Yapay Zeka Rapor Kontrol",
     "Eczane Yapay Zeka Rapor Kontrol",
     "SGK Rapor Kontrol",
@@ -64,24 +72,24 @@ export const metadata = {
     type: "website",
     locale: "tr_TR",
     url: "https://raporin.com",
-    title: "RaporinAI — ÜCRETSİZ Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
+    title: "RaporinAI — ÜCRETSİZ Eczane Reçete ve Rapor Kontrol Programı",
     description:
-      "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve Eczane Rapor Kontrol Programıdır. Eczane rapor hatalarını saniyeler içinde bulun.",
+      "Dönemin tüm reçetelerini tek tıkla analiz edin. Reçete ve rapor hatalarını saniyeler içinde bulun, SGK kesintilerini önleyin.",
     siteName: "RaporinAI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RaporinAI - Eczane Rapor Kontrol Programı",
+        alt: "RaporinAI - Eczane Reçete ve Rapor Kontrol Programı",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RaporinAI — ÜCRETSİZ Eczane Rapor Kontrol Programı | Yapay Zeka Destekli SGK Analizi",
+    title: "RaporinAI — ÜCRETSİZ Eczane Reçete ve Rapor Kontrol Programı",
     description:
-      "RaporinAI, eczaneler için en gelişmiş Yapay Zeka Rapor Kontrol ve Eczane Rapor Kontrol Programıdır.",
+      "Dönemin tüm reçetelerini tek tıkla analiz edin, SGK kesintilerini fatura teslim etmeden önce önleyin.",
     images: ["/og-image.png"],
     creator: "@raporinai",
   },

@@ -106,7 +106,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Yapay Zeka Teknolojimiz</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              RaporinAI, gelişmiş optik karakter tanıma (OCR) ve doğal dil işleme (NLP) teknolojileri ile çalışır.
+              RaporinAI, Medula entegrasyonu, optik karakter tanıma (OCR) ve doğal dil işleme (NLP) teknolojilerini bir arada kullanır.
             </p>
           </motion.div>
 
@@ -125,19 +125,27 @@ export default function AboutPage() {
               <ol className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">1</span>
-                  <span><strong>Rapor Yükleme:</strong>PDF formatındaki SGK raporlarınnı PDF formatında yüklersiniz</span>
+                  <span><strong>Medula Girişi:</strong> Uygulama içindeki Medula ekranından kendi bilgilerinizle giriş yaparsınız</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">2</span>
-                  <span><strong>OCR Analizi:</strong> Gelişmiş OCR sistemi ile KVKK uyumlu maskeleme yapılarak hasta kişisel bilgileri otomatik maskelenir</span>
+                  <span><strong>Reçete Aktarımı:</strong> Fatura türü ve dönem seçilir; o dönemin reçeteleri Medula&apos;dan aktarılır</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">3</span>
-                  <span><strong>SUT Kontrolü:</strong> ICD kodları, tanılar ve SUT uyumluluğu kontrol edilir</span>
+                  <span><strong>Tekil veya Toplu Analiz:</strong> Tek bir ilacı kontrol edin ya da tek tıkla dönemin tamamını analize gönderin</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">4</span>
-                  <span><strong>Sonuç Raporu:</strong> Hatalar ve öneriler detaylı şekilde sunulur</span>
+                  <span><strong>SUT ve Doz Kontrolü:</strong> ICD kodları, tanılar, SUT uyumu ve reçete–rapor doz uyumu kontrol edilir</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">5</span>
+                  <span><strong>Sonuç Raporu:</strong> Uygun olmayan ilaçlar, gerekçeleri ve düzeltme önerileriyle listelenir</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">+</span>
+                  <span><strong>PDF Akışı:</strong> Elinizdeki tekil bir raporu PDF olarak yükleyip kontrol etmek de mümkündür; kişisel alanlar bilgisayarınızda maskelenir</span>
                 </li>
               </ol>
             </motion.div>
@@ -156,7 +164,7 @@ export default function AboutPage() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="text-teal-600 text-xl">✓</span>
-                  <span><strong>%95 Doğruluk Oranı:</strong> Gelişmiş AI modelleri ile yüksek hassasiyet</span>
+                  <span><strong>%98 Doğruluk Oranı:</strong> Gelişmiş AI modelleri ile yüksek hassasiyet</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-teal-600 text-xl">✓</span>

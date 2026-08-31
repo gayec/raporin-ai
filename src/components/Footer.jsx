@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Image src="/logo.png" alt="RaporinAI" width={150} height={60} className="mb-4" />
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              Yapay zeka destekli yeni nesil eczane rapor kontrol programı ve eczanelerin dijital dönüşüm partneri.
+              Yapay zeka destekli yeni nesil eczane reçete ve rapor kontrol programı, eczanelerin dijital dönüşüm partneri.
             </p>
             <div className="flex gap-3">
               <a href="https://x.com/raporinai?s=11&t=8Lo_CQSYIVbXaj_1yPJAeA" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-100 hover:bg-teal-600 text-teal-600 hover:text-white rounded-full flex items-center justify-center transition-all">

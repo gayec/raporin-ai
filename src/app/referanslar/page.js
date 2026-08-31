@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata = {
-    title: "Referanslar | RaporinAI - Eczane Rapor Kontrol Programı",
+    title: "Referanslar | RaporinAI - Eczane Reçete ve Rapor Kontrol Programı",
     description: "RaporinAI hakkında yayınlanan haberler ve kurumsal referanslar. Eczacı odaları ve sektörel yayınlarda yer alan içerikler.",
     openGraph: {
         title: "Referanslar | RaporinAI",

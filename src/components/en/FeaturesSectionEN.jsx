@@ -1,42 +1,82 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaShieldAlt, FaHistory, FaUsersCog, FaRobot, FaLock } from "react-icons/fa";
+import Image from "next/image";
+import {
+  FaShieldAlt,
+  FaUsersCog,
+  FaGlobe,
+  FaLayerGroup,
+  FaPills,
+  FaLock,
+} from "react-icons/fa";
+import { RiSparkling2Fill } from "react-icons/ri";
 
 export default function FeaturesSectionEN() {
   const features = [
     {
-      icon: <FaShieldAlt size={26} className="text-teal-600" />,
-      title: "GDPR Compliance & Secure Analysis",
-      desc: "Personal data is masked before processing; all analyses comply with data protection standards.",
-      gradient: "from-teal-100 via-emerald-50 to-cyan-100",
+      Icon: RiSparkling2Fill,
+      title: "Always-Current Regulatory Analysis",
+      desc: "Our model is trained on the current regulatory documents, and updates are reflected regularly — your reports are always assessed against the rules in force.",
+      layout: "featured",
     },
     {
-      icon: <FaLock size={26} className="text-teal-600" />,
-      title: "No Access to Your Insurance Portal Required",
-      desc: "Your insurance portal credentials are never requested. Simply upload your PDF reports and analyze them securely.",
-      gradient: "from-emerald-100 via-teal-50 to-cyan-100",
+      Icon: FaGlobe,
+      title: "Insurance Portal Integration",
+      desc: "Prescription and report data comes straight from the insurance portal. Everything needed for a check is already in the app — no manual data entry.",
+      layout: "normal",
     },
     {
-      icon: <FaHistory size={26} className="text-teal-600" />,
-      title: "Report History Tracking",
-      desc: "Access your complete report analysis history; instantly view and compare results.",
-      gradient: "from-teal-50 via-cyan-50 to-emerald-100",
+      Icon: FaLayerGroup,
+      title: "One-Click Bulk Analysis",
+      desc: "Every reported medicine of a claim period goes to analysis with a single click, and runs in the background while you keep working.",
+      layout: "normal",
     },
     {
-      icon: <FaUsersCog size={26} className="text-teal-600" />,
-      title: "Multi-User & Role Management",
-      desc: "Assign roles and permissions to team members for secure and organized usage.",
-      gradient: "from-cyan-100 via-teal-50 to-emerald-100",
-    }
+      Icon: FaPills,
+      title: "Prescription–Report Dosage Check",
+      desc: "AI compares the dosage on the prescription with the one on the report and spots any mismatch right away.",
+      layout: "normal",
+    },
+    {
+      Icon: FaLock,
+      title: "Credentials Stay on Your Computer",
+      desc: "You sign in to the portal yourself inside the app. If you enable auto-login, your credentials are encrypted and stored only on your own machine — never on our servers.",
+      layout: "normal",
+    },
+    {
+      Icon: FaShieldAlt,
+      title: "Data Protection by Design",
+      desc: "Patient ID numbers, names and report numbers are never sent or stored; in the PDF flow personal fields are masked on your own device before anything is sent.",
+      layout: "wide",
+    },
+    {
+      Icon: FaUsersCog,
+      title: "Team Notes & Role Management",
+      desc: "Assign roles and permissions to team members and leave notes on report checks to keep the pharmacy's workflow in one place.",
+      layout: "wide",
+    },
   ];
 
+  const spanClass = {
+    featured: "md:col-span-2 lg:col-span-2 lg:row-span-2",
+    normal: "",
+    wide: "md:col-span-2 lg:col-span-2",
+  };
+
   return (
-    <section id="features" className="py-20 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
-      <div className="max-w-[1440px] mx-auto px-6">
+    <section id="features" className="relative py-24 bg-gradient-to-b from-white via-[#F9FFFD] to-[#E8FFFB]">
+      {/* Background texture */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-teal-200/20 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-emerald-200/20 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-[1440px] mx-auto px-6">
         <motion.h2
-          className="text-4xl font-bold text-center mb-12"
+          className="text-4xl font-bold text-center mb-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           Key{" "}
@@ -44,24 +84,86 @@ export default function FeaturesSectionEN() {
             Features
           </span>
         </motion.h2>
+        <motion.p
+          className="text-center text-gray-600 max-w-2xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Import a whole claim period from the insurance portal and analyze it with
+          a single click.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((f, i) => (
-            <motion.div
-              key={i}
-              className={`group relative overflow-hidden rounded-2xl p-6 border border-teal-100 shadow-sm transition-all duration-300 bg-gradient-to-br ${f.gradient} hover:shadow-lg hover:-translate-y-1`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-            >
-              <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/50 blur-2xl opacity-70 group-hover:opacity-100 transition" />
-              <div className="pointer-events-none absolute -bottom-16 -left-10 w-52 h-52 rounded-full bg-white/30 blur-3xl" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {features.map((f, i) => {
+            const { Icon } = f;
 
-              <div className="mb-4">{f.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.title}</h3>
-              <p className="text-sm text-gray-700 leading-relaxed">{f.desc}</p>
-            </motion.div>
-          ))}
+            if (f.layout === "featured") {
+              return (
+                <motion.div
+                  key={f.title}
+                  className={`${spanClass.featured} group relative overflow-hidden rounded-3xl border border-teal-100 shadow-xl shadow-teal-900/10`}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/akılli-analiz-arka-plan.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Metin okunabilirliği için yumuşak açılım */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+
+                  <div className="relative flex h-full flex-col p-8">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#12A897] to-[#17C6A3] text-white shadow-lg shadow-teal-900/20 transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={34} />
+                    </div>
+                    <h3 className="mt-7 text-2xl lg:text-3xl font-bold text-gray-900 leading-snug">
+                      {f.title}
+                    </h3>
+                    <p className="mt-4 text-gray-700 leading-relaxed lg:text-lg max-w-xl">
+                      {f.desc}
+                    </p>
+                    <div className="mt-auto pt-8">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-white/85 px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-700 ring-1 ring-teal-200 backdrop-blur-sm">
+                        AI Engine
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            }
+
+            const isWide = f.layout === "wide";
+
+            return (
+              <motion.div
+                key={f.title}
+                className={`${spanClass[f.layout]} group relative overflow-hidden rounded-2xl border border-teal-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.05 * i }}
+              >
+                <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-teal-100/60 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                <div className={`relative ${isWide ? "flex items-start gap-5" : ""}`}>
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-teal-50 to-emerald-100 text-teal-600 ring-1 ring-teal-100 transition-all duration-300 group-hover:from-[#12A897] group-hover:to-[#17C6A3] group-hover:text-white group-hover:ring-teal-300">
+                    <Icon size={22} />
+                  </div>
+                  <div className={isWide ? "" : "mt-5"}>
+                    <h3 className="text-lg font-semibold text-gray-900">{f.title}</h3>
+                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

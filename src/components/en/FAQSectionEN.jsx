@@ -12,7 +12,23 @@ export default function FAQSectionEN() {
       questions: [
         {
           q: "What is RaporinAI and how does it work?",
-          a: "RaporinAI is an AI-powered insurance report analysis platform designed for pharmacies. By uploading reports in PDF format, the AI technology detects regulatory compliance issues, ICD code errors, and potential problems within seconds. The system uses OCR (Optical Character Recognition) and NLP (Natural Language Processing) technologies to automatically analyze reports."
+          a: "RaporinAI is an AI-powered reimbursement verification platform designed for pharmacies. You sign in to the insurance portal from inside the application, pick an invoice type and a claim period, and bring that period's prescriptions into RaporinAI. From there you can either open one prescription and check a single medicine, or send the whole period to analysis with one click. Reports are assessed against the current regulations, including diagnosis matching and prescription-versus-report dosage."
+        },
+        {
+          q: "How does the insurance portal integration work? Do I have to share my password?",
+          a: "No. You sign in to the insurance portal yourself, through a secure browser embedded in the application. Your portal credentials are never sent to or stored on our servers. If you enable optional auto-login, your username and password are encrypted and kept only on your own computer, and you can delete them at any time from the Profile screen."
+        },
+        {
+          q: "Do I have to import prescriptions from scratch every time?",
+          a: "No. Importing a period once is enough. When new prescriptions appear later, \"Update Import\" is all it takes — only what is missing gets filled in."
+        },
+        {
+          q: "What is bulk analysis and how is it different from single analysis?",
+          a: "In single analysis you open one prescription and check one medicine. In bulk analysis, every reported medicine in the selected period goes to analysis with one click and runs in the background while you keep working. When it finishes, a single filter lists everything that is not compliant."
+        },
+        {
+          q: "Can I verify a single report by uploading a PDF?",
+          a: "Yes. You can upload a report you downloaded as PDF and verify it directly. When you only need to check one report you already have at hand, this is the quicker route."
         },
         {
           q: "Which report types can I verify?",
@@ -20,7 +36,7 @@ export default function FAQSectionEN() {
         },
         {
           q: "Do I need technical knowledge to use the system?",
-          a: "No, RaporinAI has an extremely user-friendly interface. Simply drag and drop your PDF report and click the analyze button. Results are presented in a clear and detailed manner. You can easily use it without any technical knowledge."
+          a: "No. You sign in to the insurance portal as you always do, select the invoice type and period, and start the import — RaporinAI handles the rest. Starting the analysis takes a single click, and results are presented criterion by criterion. No technical knowledge is required."
         }
       ]
     },
@@ -30,6 +46,10 @@ export default function FAQSectionEN() {
         {
           q: "How are regulatory non-compliance issues detected?",
           a: "Our system continuously monitors the latest healthcare regulations database. ICD-10 diagnosis codes, drug interactions, dosage appropriateness, and regulatory restrictions are automatically checked. When non-compliance is detected, detailed explanations and correction suggestions are provided."
+        },
+        {
+          q: "What is the prescription-versus-report dosage check?",
+          a: "Even when every regulatory criterion is met, a medicine is not reimbursed if the dosage written on the prescription exceeds the dosage allowed by the report's treatment scheme. RaporinAI compares the two automatically and flags the medicine as non-compliant when the report dosage is exceeded."
         },
         {
           q: "How are regulatory updates tracked?",
@@ -42,7 +62,7 @@ export default function FAQSectionEN() {
       questions: [
         {
           q: "How is personal data protected?",
-          a: "RaporinAI fully complies with GDPR and data protection standards. All patient information (ID numbers, names, etc.) is automatically masked and encrypted. Your data is stored on secure servers and is never shared with any third party."
+          a: "RaporinAI is built around data protection standards. In the portal-integrated flow, patient ID numbers, names, surnames and report numbers are never sent to our servers and never written to our database — analysis runs only on clinical fields such as diagnosis codes, active ingredients and dosage. In the PDF flow, patient and doctor personal details are masked on your own computer before the report is sent. Your data is stored on secure servers and is never shared with any third party."
         }
       ]
     },
@@ -52,15 +72,6 @@ export default function FAQSectionEN() {
         {
           q: "Is there a free trial?",
           a: "Yes! RaporinAI is currently in Beta and all features are completely free — no credit card required."
-        }
-      ]
-    },
-    {
-      category: "Technical Support",
-      questions: [
-        {
-          q: "How can I get technical support?",
-          a: "You can reach us via email. We generate a unique transaction ID for each report verification. If you encounter any issues with report analysis, you can share this transaction ID with us for quick and detailed support."
         }
       ]
     }

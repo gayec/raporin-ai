@@ -15,9 +15,17 @@ export default function StructuredDataEN() {
       "ratingValue": "4.8",
       "ratingCount": "150"
     },
-    "description": "AI-powered pharmacy report verification platform that analyzes insurance reports in seconds. Reduce deductions by up to 95%.",
-    "screenshot": "https://raporin.com/screens/kontrol.png",
-    "softwareVersion": "1.0",
+    "description": "AI-powered pharmacy report verification platform with insurance portal integration. Imports every prescription of a claim period, analyzes all reported medicines in one click, and flags regulatory non-compliance and prescription-versus-report dosage overruns.",
+    "featureList": [
+      "Insurance portal integration with automatic prescription import",
+      "One-click bulk report analysis",
+      "Prescription-versus-report dosage comparison",
+      "Criterion-based analysis against current regulations",
+      "Single report verification via PDF upload",
+      "Multi-user access, role management and team notes"
+    ],
+    "screenshot": "https://raporin.com/screens/toplu-analiz.png",
+    "softwareVersion": "1.1",
     "author": {
       "@type": "Organization",
       "name": "RaporinAI",
@@ -43,7 +51,7 @@ export default function StructuredDataEN() {
     "name": "RaporinAI",
     "url": "https://raporin.com",
     "logo": "https://raporin.com/logo.png",
-    "description": "AI-powered pharmacy insurance report verification platform",
+    "description": "AI-powered pharmacy report verification platform with insurance portal integration",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
@@ -66,7 +74,23 @@ export default function StructuredDataEN() {
         "name": "How does RaporinAI work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "RaporinAI automatically analyzes your insurance reports using AI. Upload your report, the system verifies it in seconds and detects errors."
+          "text": "You sign in to the insurance portal from inside the application, choose an invoice type and claim period, and import that period's prescriptions into RaporinAI. From there you can analyze a single medicine in a prescription's detail view, or start a one-click bulk analysis of every reported medicine in the period. Results are presented criterion by criterion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is bulk report analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every reported medicine in the imported claim period is queued with a single click and analyzed in the background. Report-medicine pairs that were already analyzed are skipped, and when it finishes a single filter lists everything that is not compliant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to share my insurance portal password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You sign in to the portal yourself through a browser embedded in the app; your credentials are never sent to our servers. If you enable auto-login, they are encrypted and stored only on your own computer."
         }
       },
       {

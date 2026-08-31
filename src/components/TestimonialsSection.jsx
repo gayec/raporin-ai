@@ -3,66 +3,43 @@ import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
 export default function TestimonialsSection() {
+  /**
+   * Eczacılardan gelen gerçek geri bildirimler.
+   *
+   * Eczane veya kişi adı yayımlanmaz. Yorum sahibi izin verirse
+   * `author` alanına maskelenmiş baş harf ("Ecz. B.K."), `city` alanına
+   * şehir yazılabilir; boş bırakılan alanlar kartta hiç görünmez.
+   */
   const testimonials = [
     {
-      name: "Ecz. Ayşe Yılmaz",
-      location: "İstanbul",
-      role: "Eczane Sahibi",
+      headline: "Toplu reçete analizi gün sonunda işimizi gerçekten kolaylaştırıyor.",
+      comment:
+        "Önceden tek tek kontrol ettiğimiz reçeteleri artık toplu şekilde analiz edebiliyoruz. Özellikle raporlu reçetelerin yoğun olduğu günlerde gözden kaçabilecek detayları daha hızlı fark etmemizi sağlıyor.",
+      author: "Ecz. A.Y.",
+      city: "",
       rating: 5,
-      comment: "RaporinAI sayesinde SGK kesintilerimiz %80 azaldı. Manuel kontrol yaparken saatler harcıyorduk, şimdi dakikalar içinde tüm raporları kontrol ediyoruz. Gerçekten hayat kurtarıcı bir sistem!",
-      avatar: "AY",
-      gradient: "from-teal-400 to-emerald-500"
     },
     {
-      name: "Ecz. Mehmet Kaya",
-      location: "Ankara",
-      role: "Eczane Müdürü",
+      headline: "Sadece uygun ya da uygun değil demesi değil, nedenini açıklaması benim için önemli.",
+      comment:
+        "RaporinAI'ın en sevdiğim tarafı detaylı SUT değerlendirmesi sunması. Hangi kriterin sağlandığını, hangi noktada dikkat edilmesi gerektiğini görebilmek kontrol sürecini çok daha anlaşılır hale getiriyor.",
+      author: "Ecz. B.K.",
+      city: "",
       rating: 5,
-      comment: "SUT uyumsuzluklarını önceden tespit etmek mali açıdan büyük avantaj sağladı. Sistem çok kullanıcı dostu ve KVKK uyumlu olması güven veriyor. Tüm eczacı arkadaşlarıma tavsiye ediyorum.",
-      avatar: "MK",
-      gradient: "from-emerald-400 to-teal-500"
     },
     {
-      name: "Ecz. Zeynep Demir",
-      location: "İzmir",
-      role: "Eczane Sahibi",
+      headline: "Yoğunlukta en büyük faydası atlanabilecek noktaları göstermesi ve ilaç dozlarına kadar analiz etmesi.",
+      comment:
+        "Günde çok sayıda reçete kontrol ederken aynı dikkati sürekli korumak zor olabiliyor. RaporinAI reçete, rapor ve SUT koşullarını birlikte değerlendirerek özellikle dikkat etmem gereken alanları öne çıkarıyor.",
+      author: "Ecz. D.M.",
+      city: "",
       rating: 5,
-      comment: "Medula'ya girmeden rapor kontrolü yapabilmek inanılmaz pratik. Ekip yönetimi özelliği sayesinde çalışanlarımız da sistemi kullanabiliyor. İlk ayda yatırımımızı geri kazandık.",
-      avatar: "ZD",
-      gradient: "from-cyan-400 to-teal-500"
     },
-    {
-      name: "Ecz. Can Özkan",
-      location: "Bursa",
-      role: "Eczane Sahibi",
-      rating: 5,
-      comment: "Yapay zeka teknolojisi gerçekten çok başarılı. ICD kod hatalarını anında yakalıyor ve düzeltme önerileri sunuyor. Geçmiş raporları takip edebilmek de çok faydalı bir özellik.",
-      avatar: "CÖ",
-      gradient: "from-teal-500 to-emerald-400"
-    },
-    {
-      name: "Ecz. Elif Arslan",
-      location: "Antalya",
-      role: "Eczane Müdürü",
-      rating: 5,
-      comment: "Pilot kullanıcı olarak başladık ve sonuçlar beklentilerimizi aştı. Müşteri desteği çok hızlı ve çözüm odaklı. RaporinAI olmadan nasıl çalıştığımızı hatırlamıyorum artık!",
-      avatar: "EA",
-      gradient: "from-emerald-500 to-cyan-400"
-    },
-    {
-      name: "Ecz. Burak Şahin",
-      location: "Adana",
-      role: "Eczane Sahibi",
-      rating: 5,
-      comment: "Aylık SGK kesintilerimiz ortalama 15.000 TL azaldı. Sistem kendini ilk ayda amorti etti. Hem zaman hem para tasarrufu sağlıyor. Kesinlikle denemeye değer!",
-      avatar: "BŞ",
-      gradient: "from-teal-400 to-cyan-500"
-    }
   ];
 
   const stats = [
-    { number: "900+", label: "Aktif Eczane" },
-    { number: "%95", label: "Doğruluk Oranı" },
+    { number: "1000+", label: "Aktif Eczane" },
+    { number: "%98", label: "Doğruluk Oranı" },
     { number: "50K+", label: "Kontrol Edilen Rapor" },
     { number: "4.9/5", label: "Kullanıcı Memnuniyeti" }
   ];
@@ -73,7 +50,6 @@ export default function TestimonialsSection() {
         {/* Başlık */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -111,51 +87,82 @@ export default function TestimonialsSection() {
           ))}
         </motion.div>
 
-        {/* 
-          TODO: Eczacı yorum kartları - İstendiğinde açılacak
-          Yorumlar Grid - Geçici olarak kapalı
-        */}
-        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-teal-100 hover:shadow-xl transition-all hover:-translate-y-1 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-50 to-emerald-50 rounded-full blur-3xl opacity-50"></div>
-              
-              <div className="absolute top-4 right-4 opacity-10">
-                <FaQuoteLeft size={60} className="text-teal-600" />
-              </div>
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
-                    {testimonial.avatar}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    <p className="text-xs text-teal-600 font-medium">{testimonial.location}</p>
-                  </div>
+        {/* Eczacı yorumları — tek yorum öne çıkan blok, çoğaldıkça grid'e yayılır */}
+        {testimonials.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-8">
+            {testimonials.map((testimonial, index) => {
+              const isFeatured = testimonials.length === 1;
+              return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`relative w-full overflow-hidden rounded-2xl border border-teal-100 bg-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl ${
+                  isFeatured ? "max-w-3xl p-9 sm:p-10" : "max-w-md lg:max-w-[380px] p-7"
+                }`}
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-teal-50 to-emerald-50 blur-3xl" />
+                <div className="pointer-events-none absolute right-5 top-5 opacity-10">
+                  <FaQuoteLeft size={52} className="text-teal-600" />
                 </div>
 
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <FaStar key={i} className="text-amber-400" size={16} />
-                  ))}
-                </div>
+                <div className="relative z-10">
+                  <div className="mb-4 flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FaStar key={i} className="text-amber-400" size={16} />
+                    ))}
+                  </div>
 
-                <p className="text-gray-700 text-sm leading-relaxed italic">
-                  "{testimonial.comment}"
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div> */}
+                  {testimonial.headline ? (
+                    <>
+                      <p
+                        className={`font-semibold text-gray-900 leading-snug ${
+                          isFeatured ? "text-xl sm:text-2xl" : "text-base sm:text-lg"
+                        }`}
+                      >
+                        &ldquo;{testimonial.headline}&rdquo;
+                      </p>
+                      <p
+                        className={`mt-3 text-gray-600 leading-relaxed ${
+                          isFeatured ? "text-lg" : "text-sm"
+                        }`}
+                      >
+                        {testimonial.comment}
+                      </p>
+                    </>
+                  ) : (
+                    <p
+                      className={`text-gray-700 leading-relaxed ${
+                        isFeatured ? "text-lg sm:text-xl" : ""
+                      }`}
+                    >
+                      &ldquo;{testimonial.comment}&rdquo;
+                    </p>
+                  )}
+
+                  <div className="mt-6 flex items-center gap-3 border-t border-teal-50 pt-5">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 text-white shadow-md">
+                      <FaQuoteLeft size={14} />
+                    </div>
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-900">
+                        {testimonial.author || "Eczacı"}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {testimonial.city
+                          ? `${testimonial.city} · Doğrulanmış kullanıcı`
+                          : "Doğrulanmış kullanıcı"}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              );
+            })}
+          </div>
+        )}
 
         {/* Alt CTA */}
         <motion.div

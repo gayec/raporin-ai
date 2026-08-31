@@ -154,7 +154,7 @@ export default function AboutPageEN() {
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our AI Technology</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              RaporinAI operates with advanced Optical Character Recognition (OCR) and Natural Language Processing (NLP) technologies.
+              RaporinAI combines insurance portal integration with advanced Optical Character Recognition (OCR) and Natural Language Processing (NLP) technologies.
             </p>
           </motion.div>
 
@@ -173,19 +173,27 @@ export default function AboutPageEN() {
               <ol className="space-y-3 text-gray-700">
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">1</span>
-                  <span><strong>Report Upload:</strong> Upload your insurance reports in PDF format</span>
+                  <span><strong>Portal Sign-In:</strong> You sign in to the insurance portal with your own credentials, inside the application</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">2</span>
-                  <span><strong>OCR Analysis:</strong> Advanced OCR system automatically masks patient personal information for data protection compliance</span>
+                  <span><strong>Prescription Import:</strong> Pick an invoice type and claim period; that period&apos;s prescriptions are imported</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">3</span>
-                  <span><strong>Regulatory Check:</strong> ICD codes, diagnoses, and regulatory compliance are verified</span>
+                  <span><strong>Single or Bulk Analysis:</strong> Check one medicine, or send the whole period to analysis with one click</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">4</span>
-                  <span><strong>Results Report:</strong> Errors and recommendations are presented in detail</span>
+                  <span><strong>Regulatory &amp; Dosage Check:</strong> ICD codes, diagnoses, regulatory compliance and prescription-versus-report dosage are verified</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">5</span>
+                  <span><strong>Results Report:</strong> Non-compliant medicines are listed with reasons and correction suggestions</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">+</span>
+                  <span><strong>PDF Flow:</strong> A single report can also be uploaded as PDF; personal fields are masked on your own computer first</span>
                 </li>
               </ol>
             </motion.div>

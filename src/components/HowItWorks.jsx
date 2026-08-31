@@ -1,55 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPills, FaFileUpload, FaEyeSlash, FaRobot, FaCheckCircle } from "react-icons/fa";
+import {
+  FaSignInAlt,
+  FaCalendarAlt,
+  FaFileDownload,
+  FaPrescriptionBottleAlt,
+  FaLayerGroup,
+  FaCheckCircle,
+  FaFilePdf,
+} from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { useState } from "react";
-import ConsentYouTube from "./ConsentYouTube";
+import Screenshot from "./Screenshot";
 
 export default function HowItWorks() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const steps = [
     {
-      icon: <FaPills size={30} className="text-teal-600" />,
-      title: "İlaç Seçimi",
-      desc: "Kontrol edeceğiniz ilacı seçin ve rapor yüklemeye başlayın.",
+      icon: <FaSignInAlt size={30} className="text-teal-600" />,
+      title: "Medula'ya Giriş Yapın",
+      desc: "RaporinAI'nin içindeki Medula ekranından her zamanki gibi giriş yapın. Dilerseniz bilgilerinizi kaydedip sonraki girişleri otomatik hale getirebilirsiniz.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-      image: "/screens/ilac-secimi-4.png",
+      image: "/screens/medula-giris.png",
       stepNumber: "01",
     },
     {
-      icon: <FaFileUpload size={30} className="text-teal-600" />,
-      title: "Rapor Yükleme",
-      desc: "Medula'dan PDF formatında alınan SGK raporunu RaporinAI'ye yükleyin.",
+      icon: <FaCalendarAlt size={30} className="text-teal-600" />,
+      title: "Reçete Kontrol'ü Açın, Dönem Seçin",
+      desc: "Sol menüden Reçete Kontrol sekmesine geçin. Ardından kontrol etmek istediğiniz fatura türünü (A Grubu / C Grubu) ve dönemi seçin. Dönemler arasında istediğiniz zaman geçiş yapabilirsiniz.",
       gradient: "from-emerald-100 via-cyan-50 to-teal-100",
-      image: "/screens/rapor-yukleme.png",
+      image: "/screens/fatura-donem-secimi.png",
       stepNumber: "02",
     },
     {
-      icon: <FaEyeSlash size={30} className="text-teal-600" />,
-      title: "Maskeleme",
-      desc: "KVKK uyumu ve gizlilik için hasta ve doktor kişisel bilgileri otomatik olarak bilgisayarınızda maskelenir.",
+      icon: <FaFileDownload size={30} className="text-teal-600" />,
+      title: "Reçeteleri Medula'dan Aktarın",
+      desc: "Tek tuşla o dönemin reçeteleri Medula'dan RaporinAI'ye aktarılır; ilerlemeyi ekranda görürsünüz. Sonradan eklenen reçeteler için \"Aktarımı Güncelle\" demeniz yeterli.",
       gradient: "from-cyan-100 via-emerald-50 to-teal-100",
-      image: "/screens/pdf-mask-3.png",
+      image: "/screens/recete-aktarimi.png",
       stepNumber: "03",
     },
     {
-      icon: <FaRobot size={30} className="text-teal-600" />,
-      title: "Yapay Zeka Analizi",
-      desc: "RaporinAI, maskelenmiş raporu en güncel SUT kurallarına göre analiz eder ve olası SGK kesintilerini erken tespit eder.",
+      icon: <FaPrescriptionBottleAlt size={30} className="text-teal-600" />,
+      title: "Reçete Detayında Tekil Analiz",
+      desc: "Listeden bir reçeteye tıklayın; içindeki ilaçları ve raporlarını görün. Tek bir ilacı hemen kontrol etmek için \"Analiz Et\" demeniz yeterli.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-      image: "/screens/kontrol.png",
+      image: "/screens/recete-detay.png",
       stepNumber: "04",
     },
     {
-      icon: <FaCheckCircle size={30} className="text-teal-600" />,
-      title: "Sonucu Gör",
-      desc: "Raporun SUT uyumluluğunu analiz ederek size düzeltme için geri bildirim verir.",
+      icon: <FaLayerGroup size={30} className="text-teal-600" />,
+      title: "Tek Tıkla Toplu Analiz",
+      desc: "Dönemdeki tüm raporlu ilaçları tek tıkla analize gönderin. Analiz arka planda sürerken uygulamayı kullanmaya devam edebilirsiniz.",
       gradient: "from-emerald-100 via-cyan-50 to-teal-100",
-      image: "/screens/detay-1.png",
+      image: "/screens/toplu-analiz.png",
       stepNumber: "05",
+    },
+    {
+      icon: <FaCheckCircle size={30} className="text-teal-600" />,
+      title: "Sonuçları Görün, Kesintiyi Önleyin",
+      desc: "Her ilaç için net bir sonuç: Uygun, Uygun Değil veya Dikkat. Uygun olmayanları tek filtreyle listeleyip fatura teslim etmeden önce düzeltin.",
+      gradient: "from-teal-100 via-cyan-50 to-emerald-100",
+      image: "/screens/analiz-sonuclari.png",
+      stepNumber: "06",
+    },
+  ];
+
+  const pdfSteps = [
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "Raporu Yükleyin",
+      desc: "Medula'dan PDF olarak aldığınız raporu ve kontrol edilecek ilacı seçin.",
+      image: "/screens/rapor-yukleme-1.png",
+    },
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "Otomatik Maskeleme",
+      desc: "Hasta ve doktor kişisel bilgileri, rapor gönderilmeden önce kendi bilgisayarınızda maskelenir.",
+      image: "/screens/pdf-mask-3.png",
+    },
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "Sonucu Görün",
+      desc: "Rapor, güncel SUT kurallarına göre analiz edilir ve kriter bazlı sonuç sunulur.",
+      image: "/screens/detay-2.png",
     },
   ];
 
@@ -69,7 +106,7 @@ export default function HowItWorks() {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            5 basit adımda RaporinAI ile SGK raporlarınızı analiz edin
+            Reçeteleri Medula&apos;dan aktarın, tek tıkla tüm dönemi analiz edin.
           </p>
         </motion.div>
 
@@ -88,25 +125,18 @@ export default function HowItWorks() {
                   className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-white cursor-pointer hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] group"
                   onClick={() => step.image && setSelectedImage(step.image)}
                 >
-                  {step.image ? (
-                    <>
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        className="object-contain p-4"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
-                        <div className="bg-white/90 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className="text-sm font-medium text-gray-700">🔍 Büyütmek için tıkla</span>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                      <p className="text-gray-400 text-sm">Görsel eklenecek</p>
+                  <Screenshot
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-contain p-4"
+                    placeholderLabel={`${step.title} — ekran görüntüsü eklenecek`}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                    <div className="bg-white/90 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-sm font-medium text-gray-700">🔍 Büyütmek için tıkla</span>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
 
@@ -140,47 +170,58 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Video Section */}
+        {/* Alternatif akış: PDF ile tekil rapor kontrolü */}
         <motion.div
-          className="mt-20"
+          className="mt-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-3">
-              Video{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17C6A3] to-[#0F918B]">
-                Rehberler
-              </span>
-            </h3>
-            <p className="text-gray-600 text-lg">
-              RaporinAI kullanımını adım adım öğrenin
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {/* Ana Video */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900 text-center">
-                RaporinAI Nasıl Çalışır?
-              </h4>
-              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <ConsentYouTube videoId="KA0H256lyyc" title="RaporinAI Nasıl Çalışır?" />
-              </div>
+          <div className="rounded-3xl border border-teal-100 bg-white/70 p-8 sm:p-10 shadow-sm">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                PDF ile{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17C6A3] to-[#0F918B]">
+                  Tekil Rapor Kontrolü
+                </span>
+              </h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Elinizdeki tek bir raporu hızlıca kontrol etmek istediğinizde,
+                Medula&apos;dan PDF olarak indirdiğiniz raporu doğrudan yükleyebilirsiniz.
+              </p>
             </div>
 
-            {/* Yardımcı Video */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900 text-center">
-                Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?
-              </h4>
-              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <ConsentYouTube videoId="FxFKBCjwdI4" title="Medula Üzerinden PDF Formatında Rapor Nasıl İndirilir?" />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {pdfSteps.map((step, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-emerald-50 overflow-hidden"
+                >
+                  <div
+                    className="relative aspect-[4/3] bg-white cursor-pointer group"
+                    onClick={() => step.image && setSelectedImage(step.image)}
+                  >
+                    <Screenshot
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-contain p-3"
+                      placeholderLabel={`${step.title} — ekran görüntüsü eklenecek`}
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      {step.icon}
+                      <h4 className="font-semibold text-gray-900">{step.title}</h4>
+                    </div>
+                    <p className="text-sm text-gray-700 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
+
       </div>
 
       {/* Lightbox Modal */}

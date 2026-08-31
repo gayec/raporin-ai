@@ -1,55 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPills, FaFileUpload, FaEyeSlash, FaRobot, FaCheckCircle } from "react-icons/fa";
+import {
+  FaSignInAlt,
+  FaCalendarAlt,
+  FaFileDownload,
+  FaPrescriptionBottleAlt,
+  FaLayerGroup,
+  FaCheckCircle,
+  FaFilePdf,
+} from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { useState } from "react";
-import ConsentYouTube from "../ConsentYouTube";
+import Screenshot from "../Screenshot";
 
 export default function HowItWorksEN() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const steps = [
     {
-      icon: <FaPills size={30} className="text-teal-600" />,
-      title: "Select Medicine",
-      desc: "Choose the medicine you want to verify and start uploading reports.",
+      icon: <FaSignInAlt size={30} className="text-teal-600" />,
+      title: "Sign In to the Insurance Portal",
+      desc: "Sign in to the insurance portal the way you always do, from the portal screen inside RaporinAI. You can save your details to make later sign-ins automatic.",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-      image: "/screens/ilac-secimi-4.png",
+      image: "/screens/medula-giris.png",
       stepNumber: "01",
     },
     {
-      icon: <FaFileUpload size={30} className="text-teal-600" />,
-      title: "Upload Report",
-      desc: "Upload your insurance report in PDF format to RaporinAI.",
+      icon: <FaCalendarAlt size={30} className="text-teal-600" />,
+      title: "Open Prescription Check, Pick a Period",
+      desc: "Switch to the Prescription Check tab in the left menu. Then pick the invoice type and the claim period you want to verify. You can switch between periods whenever you need to.",
       gradient: "from-emerald-100 via-cyan-50 to-teal-100",
-      image: "/screens/rapor-yukleme.png",
+      image: "/screens/fatura-donem-secimi.png",
       stepNumber: "02",
     },
     {
-      icon: <FaEyeSlash size={30} className="text-teal-600" />,
-      title: "Data Masking",
-      desc: "For privacy and data protection compliance, patient and doctor personal information is automatically masked on your device.",
+      icon: <FaFileDownload size={30} className="text-teal-600" />,
+      title: "Import Prescriptions From the Portal",
+      desc: "One click brings that period's prescriptions into RaporinAI, with progress shown on screen. For prescriptions added later, \"Update Import\" is all it takes.",
       gradient: "from-cyan-100 via-emerald-50 to-teal-100",
-      image: "/screens/pdf-mask-3.png",
+      image: "/screens/recete-aktarimi.png",
       stepNumber: "03",
     },
     {
-      icon: <FaRobot size={30} className="text-teal-600" />,
-      title: "AI Analysis",
-      desc: "RaporinAI analyzes the masked report against the latest healthcare regulations and detects potential insurance deductions early.",
+      icon: <FaPrescriptionBottleAlt size={30} className="text-teal-600" />,
+      title: "Single Analysis in Prescription Detail",
+      desc: "Open a prescription from the list to see its medicines and their reports. To verify one medicine right away, just hit \"Analyze\".",
       gradient: "from-teal-100 via-emerald-50 to-cyan-100",
-      image: "/screens/kontrol.png",
+      image: "/screens/recete-detay.png",
       stepNumber: "04",
     },
     {
-      icon: <FaCheckCircle size={30} className="text-teal-600" />,
-      title: "View Results",
-      desc: "Analyzes the report's regulatory compliance and provides actionable feedback for corrections.",
+      icon: <FaLayerGroup size={30} className="text-teal-600" />,
+      title: "One-Click Bulk Analysis",
+      desc: "Send every reported medicine in the period to analysis with a single click. It runs in the background while you keep using the app.",
       gradient: "from-emerald-100 via-cyan-50 to-teal-100",
-      image: "/screens/detay-1.png",
+      image: "/screens/toplu-analiz.png",
       stepNumber: "05",
+    },
+    {
+      icon: <FaCheckCircle size={30} className="text-teal-600" />,
+      title: "Review Results, Prevent Rejections",
+      desc: "Every medicine gets a clear verdict: compliant, non-compliant or needs attention. A single filter lists everything to fix before you submit the invoice.",
+      gradient: "from-teal-100 via-cyan-50 to-emerald-100",
+      image: "/screens/analiz-sonuclari.png",
+      stepNumber: "06",
+    },
+  ];
+
+  const pdfSteps = [
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "Upload the Report",
+      desc: "Pick the medicine to verify and upload the report you downloaded as PDF.",
+      image: "/screens/rapor-yukleme-1.png",
+    },
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "Automatic Masking",
+      desc: "Patient and doctor personal details are masked on your own computer before anything is sent.",
+      image: "/screens/pdf-mask-3.png",
+    },
+    {
+      icon: <FaFilePdf size={22} className="text-teal-600" />,
+      title: "See the Result",
+      desc: "The report is analyzed against the current regulations and returned criterion by criterion.",
+      image: "/screens/detay-2.png",
     },
   ];
 
@@ -69,7 +106,8 @@ export default function HowItWorksEN() {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Analyze your insurance reports with RaporinAI in 5 simple steps
+            Import prescriptions straight from the insurance portal and analyze a
+            whole claim period with a single click.
           </p>
         </motion.div>
 
@@ -88,25 +126,18 @@ export default function HowItWorksEN() {
                   className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-white cursor-pointer hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] group"
                   onClick={() => step.image && setSelectedImage(step.image)}
                 >
-                  {step.image ? (
-                    <>
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        className="object-contain p-4"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
-                        <div className="bg-white/90 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className="text-sm font-medium text-gray-700">🔍 Click to enlarge</span>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                      <p className="text-gray-400 text-sm">Image coming soon</p>
+                  <Screenshot
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-contain p-4"
+                    placeholderLabel={`${step.title} — screenshot coming soon`}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                    <div className="bg-white/90 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-sm font-medium text-gray-700">🔍 Click to enlarge</span>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
 
@@ -136,47 +167,58 @@ export default function HowItWorksEN() {
           ))}
         </div>
 
-        {/* Video Section */}
+        {/* Alternative flow: single report via PDF */}
         <motion.div
-          className="mt-20"
+          className="mt-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-3">
-              Video{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17C6A3] to-[#0F918B]">
-                Guides
-              </span>
-            </h3>
-            <p className="text-gray-600 text-lg">
-              Learn how to use RaporinAI step by step
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {/* Main Video */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900 text-center">
-                How Does RaporinAI Work?
-              </h4>
-              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <ConsentYouTube videoId="KA0H256lyyc" title="How Does RaporinAI Work?" lang="en" />
-              </div>
+          <div className="rounded-3xl border border-teal-100 bg-white/70 p-8 sm:p-10 shadow-sm">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                Single Report{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17C6A3] to-[#0F918B]">
+                  via PDF
+                </span>
+              </h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Need to check just one report you already have? Upload it as a PDF
+                and get the same criterion-by-criterion verdict.
+              </p>
             </div>
 
-            {/* Tutorial Video */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-900 text-center">
-                How to Download Reports in PDF Format?
-              </h4>
-              <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-2xl border border-teal-100 bg-black">
-                <ConsentYouTube videoId="FxFKBCjwdI4" title="How to Download Reports in PDF Format?" lang="en" />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {pdfSteps.map((step, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-emerald-50 overflow-hidden"
+                >
+                  <div
+                    className="relative aspect-[4/3] bg-white cursor-pointer group"
+                    onClick={() => step.image && setSelectedImage(step.image)}
+                  >
+                    <Screenshot
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-contain p-3"
+                      placeholderLabel={`${step.title} — screenshot coming soon`}
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      {step.icon}
+                      <h4 className="font-semibold text-gray-900">{step.title}</h4>
+                    </div>
+                    <p className="text-sm text-gray-700 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
+
       </div>
 
       {/* Lightbox Modal */}
