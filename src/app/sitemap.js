@@ -1,54 +1,41 @@
-export default function sitemap() {
-  const baseUrl = 'https://raporin.com';
+import { blogPosts } from "../lib/blogPosts";
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/download`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kvkk`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/kvkk/kullanim-kosullari-ve-uyelik-sozlesmesi`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/kvkk/eczaneler-icin-aydinlatma-metni`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: `${baseUrl}/kvkk/uygulama-cerez-aydinlatma-metni`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/kvkk/cerez-politikasi`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-  ];
+const baseUrl = "https://raporin.com";
+
+// Statik sayfalar. Yeni bir sayfa eklendiğinde buraya da eklenmelidir.
+const staticRoutes = [
+  { path: "", changeFrequency: "weekly", priority: 1 },
+  { path: "/download", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/referanslar", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/en", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/en/about", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/en/download", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/privacy", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/kvkk", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/kvkk/kullanim-kosullari-ve-uyelik-sozlesmesi", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/kvkk/eczaneler-icin-aydinlatma-metni", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/kvkk/uygulama-cerez-aydinlatma-metni", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/kvkk/cerez-politikasi", changeFrequency: "yearly", priority: 0.3 },
+];
+
+export default function sitemap() {
+  const now = new Date();
+
+  const pages = staticRoutes.map(({ path, changeFrequency, priority }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: now,
+    changeFrequency,
+    priority,
+  }));
+
+  const posts = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...pages, ...posts];
 }

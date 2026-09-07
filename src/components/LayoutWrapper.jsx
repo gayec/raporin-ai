@@ -25,7 +25,8 @@ export default function LayoutWrapper() {
               width={112}
               height={112}
               className="w-28 h-28 drop-shadow-2xl"
-              priority
+              loading="lazy"
+              sizes="112px"
             />
           </div>
         </Link>

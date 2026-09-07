@@ -17,7 +17,7 @@ export default function Navbar() {
         </Link>
 
         {/* Masaüstü menü */}
-        <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8 text-gray-700 font-medium">
           <Link href="/" className="hover:text-[#0F918B]">Ana Sayfa</Link>
           <Link href="/about" className="hover:text-[#0F918B]">Hakkımızda</Link>
           <Link href="/#features" className="hover:text-[#0F918B]">Özellikler</Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA (masaüstü) - Promosyon Badge */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link href="/download">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -58,7 +58,7 @@ export default function Navbar() {
 
         {/* Mobil menü butonu */}
         <button
-          className="md:hidden text-gray-800"
+          className="lg:hidden text-gray-800"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -67,7 +67,7 @@ export default function Navbar() {
 
       {/* Mobil menü dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-md border-t border-gray-100 flex flex-col items-center gap-4 py-4">
+        <div className="lg:hidden bg-white shadow-md border-t border-gray-100 flex flex-col items-center gap-4 py-4">
           <Link href="/" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
           <Link href="/#features" onClick={() => setMenuOpen(false)}>Özellikler</Link>

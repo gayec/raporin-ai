@@ -17,7 +17,7 @@ export default function NavbarEN() {
         </Link>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8 text-gray-700 font-medium">
           <Link href="/en" className="hover:text-[#0F918B]">Home</Link>
           <Link href="/en/about" className="hover:text-[#0F918B]">About</Link>
           <Link href="/en#features" className="hover:text-[#0F918B]">Features</Link>
@@ -26,7 +26,7 @@ export default function NavbarEN() {
         </div>
 
         {/* CTA (desktop) */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link href="/en/download">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -52,7 +52,7 @@ export default function NavbarEN() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-gray-800"
+          className="lg:hidden text-gray-800"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -61,7 +61,7 @@ export default function NavbarEN() {
 
       {/* Mobile menu dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-md border-t border-gray-100 flex flex-col items-center gap-4 py-4">
+        <div className="lg:hidden bg-white shadow-md border-t border-gray-100 flex flex-col items-center gap-4 py-4">
           <Link href="/en" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/en/about" onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/en#features" onClick={() => setMenuOpen(false)}>Features</Link>

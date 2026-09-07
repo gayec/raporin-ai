@@ -1,9 +1,20 @@
 export const metadata = {
-  title: "Uygulamayı İndir",
-  description: "RaporinAI mobil uygulamasını iOS ve Android cihazlarınıza indirin. SGK raporlarınızı mobil cihazınızdan kolayca analiz edin. Ücretsiz deneme sürümü mevcut.",
+  // absolute: kök layout'un "%s | RaporinAI" şablonunu devre dışı bırakır;
+  // başlık zaten marka adıyla başladığı için son ek markayı iki kez taşırdı.
+  title: {
+    absolute: "RaporinAI İndir — Eczane Rapor Kontrol Programı (Windows)",
+  },
+  description:
+    "RaporinAI masaüstü uygulamasını Windows bilgisayarınıza ücretsiz indirin. Medula'dan aktardığınız reçeteleri ve raporları SUT kurallarına göre analiz edin, SGK kesintilerini fatura teslim etmeden önce önleyin.",
+  alternates: {
+    canonical: "https://raporin.com/download",
+  },
   openGraph: {
-    title: "Uygulamayı İndir | RaporinAI",
-    description: "iOS ve Android için RaporinAI uygulamasını indirin. SGK raporlarınızı mobil cihazınızdan kolayca analiz edin.",
+    title: "RaporinAI İndir — Eczane Rapor Kontrol Programı (Windows)",
+    description:
+      "RaporinAI masaüstü uygulamasını Windows'a ücretsiz indirin. Medula entegrasyonu ile toplu reçete ve rapor analizi.",
+    url: "https://raporin.com/download",
+    type: "website",
   },
 };
 

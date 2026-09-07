@@ -142,7 +142,7 @@ export default function HowItWorks() {
 
               {/* İçerik Alanı */}
               <div className="flex-1 w-full">
-                <div className={`relative p-8 rounded-2xl shadow-sm border border-teal-100 bg-gradient-to-br ${step.gradient}`}>
+                <div className={`relative overflow-hidden p-8 rounded-2xl shadow-sm border border-teal-100 bg-gradient-to-br ${step.gradient}`}>
                   {/* Highlight efekti */}
                   <div className="absolute -top-8 -right-8 w-36 h-36 bg-white/40 blur-3xl rounded-full opacity-60" />
                   <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-white/30 blur-2xl rounded-full opacity-60" />

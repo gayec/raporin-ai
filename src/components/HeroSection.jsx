@@ -61,36 +61,27 @@ export default function HeroSection() {
       <div className="relative max-w-[1440px] mx-auto px-6 grid items-center gap-10 lg:gap-14 lg:grid-cols-2">
 
         {/* SOL TARAF */}
-        <div className="text-center lg:text-left">
-          {/* Başlık */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-[2.6rem] xl:text-5xl font-extrabold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0F918B] via-[#12A897] to-[#17C6A3]"
-          >
+        <div className="min-w-0 text-center lg:text-left">
+          {/* Başlık — LCP elemanı: animasyonsuz, ilk boyamada tam görünür */}
+          <h1 className="text-3xl sm:text-4xl md:text-[2.6rem] xl:text-5xl font-extrabold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0F918B] via-[#12A897] to-[#17C6A3]">
             <span className="flex items-center justify-center lg:justify-start gap-1">
               <Image
                 src="/eczane-logo.png"
-                alt="E"
+                alt=""
+                aria-hidden="true"
                 width={40}
                 height={40}
                 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
               />
+              {/* Görsel "E" harfi bir logo; metin karşılığı taramaya açık kalsın */}
+              <span className="sr-only">E</span>
               <span>czaneler İçin</span>
             </span>
             <span className="block">Yapay Zeka Destekli Reçete ve Rapor Kontrol Programı</span>
-          </motion.h1>
+          </h1>
 
           {/* Değer Önerisi */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0"
-          >
+          <p className="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
             <strong>RaporinAI</strong>, eczanenin <strong>reçete ve rapor kontrol</strong> yükünü
             üstlenen <strong>yapay zeka destekli bir eczane programı</strong>dır. Reçeteleri ve
             raporları güncel{" "}
@@ -98,16 +89,10 @@ export default function HeroSection() {
              tespit ederek{" "}
             kesintilerin önüne geçer. Beta sürecinde tamamen{" "}
             <strong>ÜCRETSİZ</strong>.
-          </motion.p>
+          </p>
 
           {/* Somut Fayda */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 max-w-xl mx-auto lg:mx-0"
-          >
+          <div className="mt-5 max-w-xl mx-auto lg:mx-0">
             <div className="relative overflow-hidden rounded-2xl border border-teal-100 bg-white/85 p-5 shadow-lg shadow-teal-900/5 backdrop-blur-sm">
               <div className="pointer-events-none absolute -right-10 -top-12 h-32 w-32 rounded-full bg-amber-100/50 blur-2xl" />
 
@@ -125,16 +110,10 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA Butonları */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
-          >
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
             <motion.a
               href="/download"
               whileHover={{ scale: 1.03, y: -2 }}
@@ -176,19 +155,13 @@ export default function HeroSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </motion.a>
-          </motion.div>
+          </div>
         </div>
 
         {/* SAĞ TARAF - EKRAN GÖRÜNTÜLERİ */}
-        <div className="relative flex flex-col items-center w-full">
+        <div className="relative flex w-full min-w-0 flex-col items-center">
           {/* Özellik çipleri */}
-          <motion.ul
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-5 flex flex-wrap justify-center gap-2"
-          >
+          <ul className="mb-5 flex flex-wrap justify-center gap-2">
             {chips.map((chip) => (
               <li
                 key={chip.label}
@@ -198,7 +171,7 @@ export default function HeroSection() {
                 {chip.label}
               </li>
             ))}
-          </motion.ul>
+          </ul>
 
           {/* 💻 Masaüstü görünüm - 3D Carousel */}
           <div className="hidden lg:block relative w-full">
@@ -298,7 +271,7 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex lg:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-3 w-full px-1 scrollbar-hide"
+            className="flex lg:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-3 w-full min-w-0 px-1 scrollbar-hide"
           >
             {screenshots.map((shot) => (
               <motion.div

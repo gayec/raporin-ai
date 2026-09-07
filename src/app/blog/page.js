@@ -1,22 +1,22 @@
 import Link from "next/link";
-import Image from "next/image";
+import { blogPosts } from "../../lib/blogPosts";
 
 export const metadata = {
-    title: "Blog | RaporinAI - Eczane Rapor Kontrol ve SGK Analiz Yazıları",
+    title: "Eczane Rapor Kontrol ve SGK Analiz Yazıları",
     description: "Eczane rapor kontrol süreçleri, SGK SUT değişiklikleri ve yapay zeka destekli eczane yönetimi hakkında güncel bilgiler ve rehberler.",
+    alternates: {
+        canonical: "https://raporin.com/blog",
+    },
+    openGraph: {
+        title: "RaporinAI Blog — Eczane Rapor Kontrol ve SGK Analiz Yazıları",
+        description: "Eczane rapor kontrol süreçleri, SGK SUT değişiklikleri ve yapay zeka destekli eczane yönetimi hakkında güncel bilgiler ve rehberler.",
+        url: "https://raporin.com/blog",
+        type: "website",
+    },
 };
 
 export default function BlogPage() {
-    const posts = [
-        {
-            slug: "sgk-rapor-kontrol-ve-sut-uyumlulugu",
-            title: "SGK Rapor Kontrol Süreci ve SUT Uyumluluğu: Eczaneler İçin Rehber",
-            excerpt: "SGK rapor kontrol süreçlerinde dikkat edilmesi gerekenler ve SUT (Sağlık Uygulama Tebliği) uyumluluğu hakkında kapsamlı bir rehber.",
-            date: "27 Kasım 2025",
-            image: "/blog/sgk-rapor.jpg", // Placeholder, we might not have this image but it's fine for structure
-            category: "Rehber"
-        }
-    ];
+    const posts = blogPosts;
 
     return (
         <main className="pt-32 pb-20 bg-gray-50 min-h-screen">

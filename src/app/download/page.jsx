@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+const VERSION = "1.1.22";
+const DOWNLOAD_URL = `https://downloads.raporin.com/RaporinAI-${VERSION}.msi`;
 
 function handleDownloadClick() {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
@@ -14,55 +15,42 @@ function handleDownloadClick() {
 
 export default function DownloadPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center py-20 px-4 bg-gradient-to-b from-[#F8FBFF] via-white to-[#E8FFFB]">
-      {/* İçerik Kutusu */}
-      <div className="absolute top-32 left-10 w-72 h-72 bg-[#17C6A3]/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-16 right-10 w-96 h-96 bg-[#0F918B]/20 rounded-full blur-3xl animate-pulse" />
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#F8FBFF] via-white to-[#E8FFFB] px-4 py-24">
+      <div className="mx-auto w-full max-w-xl rounded-3xl border border-[#D6F8F2] bg-white p-10 text-center shadow-lg sm:p-12">
 
-      <div className="bg-gradient-to-br from-[#E6FFFA] via-[#F4FFFE] to-[#CCF5FF] p-10 rounded-3xl shadow-lg text-center max-w-3xl mx-auto border border-[#D6F8F2]">
-        {/* Sadece Logo */}
-        <div className="flex justify-center mb-8">
-          <Image
-            src="/logo.png"
-            alt="Raporin AI Logo"
-            width={80}
-            height={80}
-            className="drop-shadow-sm"
-          />
-        </div>
+        <span className="inline-block rounded-full bg-amber-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-amber-700 ring-1 ring-amber-200">
+          Şimdi tamamen ücretsiz
+        </span>
 
-        {/* Başlık – Uygulamayı indir */}
-        {/* Başlık – Uygulamayı indir */}
-        <div className="flex flex-col items-center gap-3 mb-4">
-          <h1 className="text-4xl font-bold text-[#0F918B]">
-            Uygulamayı İndir
-          </h1>
-          <span className="inline-block bg-gradient-to-r from-orange-400 to-amber-400 text-white text-sm font-extrabold px-4 py-1.5 rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default tracking-widest border border-white/50">
-            ✨ ŞİMDİ TAMAMEN ÜCRETSİZ
-          </span>
-        </div>
+        <h1 className="mt-4 text-3xl font-bold text-[#0F918B] sm:text-4xl">
+          RaporinAI&apos;ı İndirin
+        </h1>
 
-        {/* Açıklama */}
-        <p className="text-gray-600 mb-10 leading-relaxed">
-          Raporin AI masaüstü sürümünü indirerek SGK raporlarını güvenle analiz edebilirsin.
-          Tüm analizler cihazında, güvenli bir şekilde yapılır.
+        <p className="mt-3 text-sm font-medium text-gray-500">
+          Eczaneler için yapay zeka destekli reçete ve rapor kontrol programı
         </p>
 
-        {/* Gradient Buton */}
-        {/* Gradient Buton */}
+        <p className="mt-5 leading-relaxed text-gray-600">
+          Masaüstü sürümünü indirerek reçete ve raporlarınızı güvenle analiz
+          edebilirsiniz.
+        </p>
+
         <a
-          href="https://downloads.raporin.com/RaporinAI-1.1.22.msi"
+          href={DOWNLOAD_URL}
           onClick={handleDownloadClick}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#17C6A3] to-[#0F918B] text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 transform hover:-translate-y-1"
+          className="mt-9 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#17C6A3] to-[#0F918B] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
         >
           <span className="text-xl">💻</span>
-          <span className="text-lg">Hemen İndir</span>
+          Hemen İndir
         </a>
 
-        {/* Alt açıklama */}
-        <p className="mt-10 text-sm text-gray-500">
-          Kurulum tamamlandıktan sonra hesabına giriş yaparak
-          Raporin AI’ın tüm özelliklerinden yararlanabilirsin.
+        <p className="mt-4 text-xs text-gray-400">
+          Windows 10 / 11 · Sürüm {VERSION} · Kredi kartı gerekmez
+        </p>
+
+        <p className="mt-8 border-t border-gray-100 pt-6 text-sm text-gray-500">
+          Kurulum tamamlandıktan sonra hesabınıza giriş yaparak RaporinAI&apos;ın
+          tüm özelliklerinden yararlanabilirsiniz.
         </p>
       </div>
     </main>

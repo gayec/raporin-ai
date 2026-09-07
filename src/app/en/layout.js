@@ -6,7 +6,9 @@ import StructuredDataEN from "../../components/en/StructuredDataEN";
 export const metadata = {
   metadataBase: new URL('https://raporin.com'),
   title: {
-    default: "RaporinAI — FREE AI-Powered Pharmacy Report Verification Platform",
+    // `absolute`, kök layout'un "%s | RaporinAI" şablonunu devre dışı bırakır;
+    // aksi hâlde başlık "... Platform | RaporinAI" şeklinde markayı iki kez taşır.
+    absolute: "RaporinAI — FREE AI-Powered Pharmacy Report Verification Platform",
     template: "%s | RaporinAI"
   },
   description:
@@ -90,8 +92,9 @@ export const metadata = {
   alternates: {
     canonical: 'https://raporin.com/en',
     languages: {
-      'tr': 'https://raporin.com',
+      'tr-TR': 'https://raporin.com',
       'en': 'https://raporin.com/en',
+      'x-default': 'https://raporin.com',
     },
   },
 };
@@ -112,7 +115,8 @@ export default function EnLayout({ children }) {
               width={112}
               height={112}
               className="w-28 h-28 drop-shadow-2xl"
-              priority
+              loading="lazy"
+              sizes="112px"
             />
           </div>
         </Link>

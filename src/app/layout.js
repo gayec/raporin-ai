@@ -23,42 +23,16 @@ export const metadata = {
   },
   description:
     "RaporinAI, yapay zeka destekli bir Eczane Reçete ve Rapor Kontrol Programıdır. Dönemin tüm reçetelerini tek tıkla analiz edin, SUT uyumsuzluklarını ve SGK kesintilerini fatura teslim etmeden önce önleyin.",
+  // Google keywords meta etiketini yok sayar; kısa ve odaklı tutuyoruz.
   keywords: [
     "Eczane Reçete ve Rapor Kontrol Programı",
     "Eczane Rapor Kontrol Programı",
-    "Eczane Reçete Kontrol Programı",
-    "Medula entegrasyonu",
-    "Medula reçete kontrol",
-    "toplu reçete kontrolü",
-    "toplu rapor kontrolü",
     "Medula rapor kontrol programı",
-    "reçete rapor doz kontrolü",
-    "Yapay Zeka Rapor Kontrol",
-    "Eczane Yapay Zeka Rapor Kontrol",
-    "SGK Rapor Kontrol",
-    "Eczane Rapor",
-    "SGK rapor analizi",
-    "eczane yazılımı",
-    "yapay zeka rapor analizi",
-    "eczane otomasyon",
-    "rapor dijitalleştirme",
-    "SGK rapor yönetimi",
-    "eczane AI çözümü",
-    "RaporinAI",
-    "eczane rapor sistemi",
-    "Eczane Yapay Zeka",
-    "Yapay Zeka Eczane",
-    "Sgk Yapay Zeka",
-    "Sgk Rapor Yapay Zeka",
-    "Eczaneler İçin Yapay Zeka",
-    "Eczane SGK Kesinti",
-    "eczane yapay zeka programı",
     "SGK rapor kontrol programı",
+    "toplu reçete kontrolü",
     "SUT uyum kontrolü",
-    "SUT uyum programı",
     "eczane SGK kesinti önleme",
-    "SGK kesinti analizi",
-    "eczacılar için yapay zeka"
+    "RaporinAI"
   ],
   authors: [{ name: "RaporinAI" }],
   creator: "RaporinAI",
@@ -104,9 +78,26 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: 'https://raporin.com',
+    languages: {
+      'tr-TR': 'https://raporin.com',
+      'en': 'https://raporin.com/en',
+      'x-default': 'https://raporin.com',
+    },
+  },
+  // Doğrulama kodları ortam değişkeninden gelir; tanımlı değilse etiket hiç basılmaz.
+  // Şablon değerli bir meta etiketi doğrulamayı bozar (bkz. .env.example).
   verification: {
-    google: 'google-site-verification-code', // Google Search Console'dan alınacak
-    // yandex: 'yandex-verification-code', // Gerekirse eklenebilir
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION
+      ? { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION } }
+      : {}),
   },
 };
 

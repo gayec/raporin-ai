@@ -10,11 +10,9 @@ export default function StructuredData() {
       "price": "0",
       "priceCurrency": "TRY"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "150"
-    },
+    // aggregateRating bilerek eklenmedi: Google, sitede görünür ve doğrulanabilir
+    // yorumlara dayanmayan kendi kendine verilen puanları yapılandırılmış veri
+    // ihlali sayıyor. Gerçek yorum toplandığında sayfada yayımlanıp buraya eklenmeli.
     "description": "Yapay zeka destekli eczane reçete ve rapor kontrol programı. Fatura dönemindeki tüm reçeteleri tek tıkla analiz ederek SUT uyumsuzluklarını ve reçete-rapor doz aşımlarını tespit eder.",
     "featureList": [
       "Medula entegrasyonu ile otomatik reçete aktarımı",
@@ -37,12 +35,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "RaporinAI",
-    "url": "https://raporin.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://raporin.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "url": "https://raporin.com"
   };
 
   const organizationInfo = {

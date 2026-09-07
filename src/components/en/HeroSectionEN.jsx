@@ -211,7 +211,7 @@ export default function HeroSectionEN() {
         </motion.ul>
         {/* Desktop view - 3D Carousel */}
         <div className="hidden lg:block relative w-full h-[350px] xl:h-[400px]">
-          <div className="relative w-full h-full flex items-center justify-center perspective-1000">
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden perspective-1000">
             {screenshots.map((shot, index) => {
               const position = getSlidePosition(index);
               return (

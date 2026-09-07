@@ -10,11 +10,8 @@ export default function StructuredDataEN() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "150"
-    },
+    // aggregateRating intentionally omitted: Google treats self-serving ratings that
+    // are not backed by visible, verifiable reviews as a structured-data violation.
     "description": "AI-powered pharmacy report verification platform with insurance portal integration. Imports every prescription of a claim period, analyzes all reported medicines in one click, and flags regulatory non-compliance and prescription-versus-report dosage overruns.",
     "featureList": [
       "Insurance portal integration with automatic prescription import",
@@ -37,12 +34,7 @@ export default function StructuredDataEN() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "RaporinAI",
-    "url": "https://raporin.com/en",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://raporin.com/en/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "url": "https://raporin.com/en"
   };
 
   const organizationInfo = {
