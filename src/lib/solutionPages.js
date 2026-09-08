@@ -153,7 +153,6 @@ export const solutionPages = {
       {
         h2: "Medula şifreniz bizde durmaz",
         body: [
-          "Bu, eczacıların haklı olarak en çok sorduğu konu. RaporinAI sizden Medula kullanıcı adı ve şifrenizi istemez, saklamaz ve sunucularına göndermez.",
           "Giriş işlemini uygulama içindeki tarayıcıdan siz yaparsınız — tıpkı Medula'yı normal tarayıcınızda açtığınızdaki gibi. Kolaylık olsun diye otomatik girişi açmayı tercih ederseniz bilgileriniz şifrelenerek yalnızca kendi bilgisayarınızda saklanır, hiçbir koşulda dışarı çıkmaz.",
         ],
       },
@@ -161,28 +160,23 @@ export const solutionPages = {
         h2: "Dönem seçin, aktarın, analize başlayın",
         body: [
           "Aktarım fatura dönemi bazındadır. Fatura türünü ve dönemi seçersiniz, o kapsamdaki reçeteler listelenir. Buradan sonra iki yol vardır: tek bir reçetenin detayına girip o ilacı analiz etmek, ya da dönemdeki tüm raporlu ilaçları tek tıkla toplu analize almak.",
-          "Aktarılan veriler KVKK'ya uygun şekilde işlenir ve şifrelenerek saklanır; üçüncü taraflarla paylaşılmaz.",
         ],
       },
       {
         h2: "Medula'ya bağlanmadan da kullanılabilir",
         body: [
-          "Entegrasyonu kullanmak zorunda değilsiniz. Elinizdeki bir rapor PDF'ini yükleyerek tekil kontrol yapabilirsiniz; bu durumda hasta ve hekim bilgileri dosya bilgisayarınızdan çıkmadan önce otomatik maskelenir.",
+          "Entegrasyonu kullanmak zorunda değilsiniz. Elinizdeki bir rapor PDF'ini yükleyerek tekil kontrol yapabilirsiniz;",
         ],
       },
     ],
     faq: [
-      {
-        q: "Medula şifremi RaporinAI'ye vermem gerekiyor mu?",
-        a: "Hayır. Medula'ya uygulama içindeki tarayıcıdan kendiniz giriş yaparsınız. Giriş bilgileriniz sunucularımıza gönderilmez.",
-      },
       {
         q: "Otomatik giriş özelliği güvenli mi?",
         a: "Otomatik girişi açarsanız bilgileriniz şifrelenerek yalnızca kendi bilgisayarınızda saklanır. Sunucularımıza aktarılmaz.",
       },
       {
         q: "Eczane otomasyon programımı değiştirmem gerekir mi?",
-        a: "Hayır. RaporinAI mevcut eczane programınızdan bağımsız çalışır; Medula üzerinden veri aktarır.",
+        a: "Hayır. RaporinAI mevcut eczane programınızdan bağımsız çalışır;",
       },
       {
         q: "Hangi dönemleri aktarabilirim?",
