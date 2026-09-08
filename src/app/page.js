@@ -6,10 +6,12 @@ import FAQSection from "../components/FAQSection.jsx";
 import Footer from "../components/Footer.jsx";
 import PricingSection from "../components/PricingSection.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+import FaqSchema from "../components/FaqSchema.jsx";
 
 export default function HomePage() {
   return (
     <main>
+      <FaqSchema />
       <div className="pt-20">
         <HeroSection />
         <FeaturesSection />

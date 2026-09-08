@@ -1,4 +1,5 @@
 import { blogPosts } from "../lib/blogPosts";
+import { solutionSlugs } from "../lib/solutionPages";
 
 const baseUrl = "https://raporin.com";
 
@@ -30,6 +31,13 @@ export default function sitemap() {
     priority,
   }));
 
+  const solutions = solutionSlugs.map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
   const posts = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
@@ -37,5 +45,5 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...pages, ...posts];
+  return [...pages, ...solutions, ...posts];
 }

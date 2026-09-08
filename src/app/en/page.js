@@ -6,10 +6,12 @@ import FAQSectionEN from "../../components/en/FAQSectionEN";
 import FooterEN from "../../components/en/FooterEN";
 import PricingSectionEN from "../../components/en/PricingSectionEN";
 import ContactSectionEN from "../../components/en/ContactSectionEN";
+import FaqSchemaEN from "../../components/en/FaqSchemaEN";
 
 export default function HomePageEN() {
   return (
     <main>
+      <FaqSchemaEN />
       <div className="pt-20">
         <HeroSectionEN />
         <FeaturesSectionEN />

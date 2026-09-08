@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CookieSettingsLink from "./CookieSettingsLink";
+import { solutionPages, solutionSlugs } from "../lib/solutionPages";
 import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope, FaBuilding, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Footer() {
@@ -96,6 +97,23 @@ export default function Footer() {
               />
             </div>
           </div>
+        </div>
+
+        {/* Çözümler — anahtar kelime sayfalarına iç bağlantı */}
+        <div className="border-t border-gray-200 pt-8">
+          <h3 className="font-bold text-gray-900 mb-4">Çözümler</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
+            {solutionSlugs.map((slug) => (
+              <li key={slug}>
+                <Link
+                  href={`/${slug}`}
+                  className="text-gray-600 hover:text-teal-600 transition-colors text-sm"
+                >
+                  {solutionPages[slug].navLabel}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Alt Bölüm */}
