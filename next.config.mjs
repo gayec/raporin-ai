@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Docker/Coolify dağıtımı için: .next/standalone altında kendi kendine yeten
+  // bir Node sunucusu üretir, runtime imajında node_modules taşımaya gerek kalmaz.
+  output: 'standalone',
+
   // Performance optimizations
   compress: true,
   
